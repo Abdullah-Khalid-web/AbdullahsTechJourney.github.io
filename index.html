@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="og:title" content="Abdullahs Tech Journey">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img2">
+    <meta property="og:url" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/">
+    <meta property="og:description" content="Frontend developer Protfolio Website ">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Abdullahs Tech Journey">
+    <meta property="" content="">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullahs Tech Journey</title>
@@ -8,326 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    body{
-        font-family: 'Roboto', sans-serif;
-        background-color: rgba(6, 5, 85, 0.959);
-         background-image: url(back2.png);
-        background-repeat: no-repeat;
-        background-size: 100vh;
-       /* background-attachment: fixed; */
-        z-index: -1; 
-        background-attachment: fixed;
-        overflow-x: hidden;
-        }
-      
-        nav{
-            width: 100vw;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 70px;
-            background-color:#181717 ;
-            color: rgb(12, 9, 172);
-        }
-        nav img{
-            width: 63px;
-            border: 2px solid  rgb(12, 9, 172);
-            border-radius: 100%; 
-            margin: 5px;
-        }
-        nav ul{
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li{
-            list-style: none;
-            margin: 0 23px;
-        }
-        nav ul li a{
-            color: rgb(12, 9, 172);
-            text-decoration: none;
-        }
-        nav ul li a:hover{
-            color: white;
-            font-size:1.04rem ;
-        }
-        .left{
-            font-size: 1.5rem;
-            font-weight: bolder;
-            display: flex;
-            text-align: center;
-            align-items: center;
-        }
-        .right{
-           font-weight: bold;
-
-        }
-        .firstsection{
-            display: flex;
-            justify-content: space-around;
-           align-items: center;
-           margin: 120px 0;
-        }
-        .buttons{
-            padding: 30px 0;
-        }
-        .btn {
-            padding: 12px;
-            background-color: rgb(12, 9, 172);
-            border: 2px solid black;
-            border-radius: 12px;
-            cursor: pointer;
-            margin-bottom: 5px;
-        }
-        .btn a{
-            color: black;
-            text-decoration: none;
-        }
-        .btn:hover{
-            box-shadow: 2px 3px 3px red;
-            
-        }
-        .firstsection>div{
-            width: 30%;
-
-        }
-        .leftsection{
-            font-weight: bold;
-            font-size: 250%;
-            margin:30px 0 ;
-        }
-        
-        .img1{
-            width: 100%;
-        }
-        .purple,#element{
-            color: rgb(12, 9, 172);
-        }
-       main hr{
-            border: 0cm;
-            margin:40px 84px ;
-            height: 1.2px;
-            background: rgb(0, 60, 255);
-        }
-        .secondsection{
-            max-width: 80vw;
-            margin: auto;
-            height: 80vh;
-
-        }
-        .secondsection h1{
-            font-size: 2rem;
-        }
-        .gray{
-            color: gray;
-        }
-        .secondsection .box{
-            border: 0;
-            color: white;
-            height: 2px;
-        
-            background-color: aliceblue;
-            margin: 56px 0px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }           
-        .secondsection .vertical{
-            height: 93px;
-            width: 1px;
-            background-color: white;
-        }
-        .top{
-            width: 40px;
-            position: relative;
-            top: -50px;
-            left: -20px;
-        }
-        .ver-title{
-            position: relative;
-            top: 70px;
-            left: -40px;
-            font-weight: bold;
-            color: black;
-        }
-        .ver-desc{
-            position: relative;
-            top: 80px;
-            width: auto;
-            color: #dad4d4;
-            left: -40px;
-            width: 12vw;
-            font-size: 12px;
-        }
-        footer{
-            background-color: rgb(0, 0, 0);
-            color: white;
-            height: 250px;
-        }
-        .footer{
-            display: flex;
-            padding: 5vh 8vw;
-        align-items: center;
-        color: rgb(12, 9, 172);
-            justify-content: space-around;
-        }
-        .footer div{
-            width: 220px;
-        }
-        footer li{
-            list-style: none;
-        }
-        footer li a{
-            text-decoration: none;
-            color: rgb(12, 9, 172);
-            margin-left: 10px;
-        }
-        footer li a:hover{
-            color: white;
-            font-size:1.04rem ;
-        }
-
-        .info-image{
-            width: 25px;
-            position: relative;
-            top: 8px;
-        }
-        .footertags{
-            margin: 5px 0;
-        }
-        .text-rights{
-            text-align: center;
-            padding:0 23px ;
-            color: aliceblue;
-        }
-        @media (max-width: 1000px){
-            .secondsection{
-                height: 80vh;
-            }
-            .leftsection{
-                font-size: 200%;
-            }
-            .buttons{
-            padding: 20px 0;
-            }
-            .btn {
-                height: 90%;
-            padding: 8px;
-            }
-            footer{
-                height: 300px;
-            }
-        }
-        @media (max-width: 800px){
-            .left{
-                font-size: 1.2rem;
-            }
-            .right{
-                font-size: 0.9rem;
-            }
-            .leftsection{
-                font-size: 180%;
-            }
-            .buttons{
-            padding: 20px 0;
-            }
-            .btn {
-                height: 80%;
-                width: 80%;
-            padding: 8px;
-            }
-            .secondsection{
-                height: 80vh;
-            }
-          
-        }
-        @media (max-width: 700px){
-           nav{
-            height: 100px;
-            display: block;
-        }
-        nav ul li{
-            list-style: none;
-            margin: 0 15px;
-        }
-        .left{
-            font-size: 1.2rem;
-        }
-            .right{
-                font-size: 0.9rem;
-                
-            }
-            .leftsection{
-                font-size: 150%;
-            }
-            .secondsection{
-                height: 100vh;
-            }
-            .leftsection{
-                font-size: 150%;
-            }
-        }
-        @media (max-width: 500px){
-            nav{
-            height: 120px;
-            width: 100vw;
-           }
-            nav ul li{
-            list-style: none;
-            margin: 0 10px;
-        }
-            .left{
-                font-size: 1.0rem;
-            }
-            .right{
-            
-            }
-            .leftsection{
-                font-size: 120%;
-            }
-            .secondsection{
-                height: 110vh;
-            }
-            .leftsection{
-                font-size: 150%;
-            }
-            footer{
-                height: 350px;
-            }
-        }
-        @media (max-width: 400px){
-            .left{
-                font-size: 1.0rem;
-            }
-            .right{
-             
-            }
-            .leftsection{
-                font-size: 120%;
-            }
-            .secondsection{
-                height: 110vh;
-            }
-            .leftsection{
-                font-size: 150%;
-            }
-            .buttons{
-            padding: 20px 0;
-            }
-            .btn {
-                font-size: 0.79rem;
-                height: 50px;
-                padding: 5px;
-
-            }
-            
-        }
-    </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -337,7 +26,7 @@
                 Abdullah's Portfolio</div>
             <div class="right">
                 <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="">About</a></li>
                     <li><a href="">Services</a></li>
                     <li><a href="">Projects</a></li>
@@ -370,28 +59,28 @@
                 <div class="vertical">
                     <img class="top" src="html.png" alt="">
                     <div class="ver-title">
-                        HTML Developer(2021)
+                        HTML Developer (2021)
                     </div>
                     <div class="ver-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, doloremque quam adipisci amet beatae nulla optio, suscipit saepe praesentium numquam nobis. Minus, sunt officia? Aut harum molestias voluptatum officia assumenda.</div>
                 </div>
                 <div class="vertical">
                     <img class="top" src="css.png" alt="">
                     <div class="ver-title">
-                        CSS Developer(2022)
+                        CSS Developer (2022)
                     </div>
                     <div class="ver-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, doloremque quam adipisci amet beatae nulla optio, suscipit saepe praesentium numquam nobis. Minus, sunt officia? Aut harum molestias voluptatum officia assumenda.</div>
                 </div>
                 <div class="vertical">
                     <img class="top"src="js.png" alt="">
                     <div class="ver-title">
-                        JavaScript Developer(2023)
+                        JavaScript Developer (2023)
                     </div>
                     <div class="ver-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, doloremque quam adipisci amet beatae nulla optio, suscipit saepe praesentium numquam nobis. Minus, sunt officia? Aut harum molestias voluptatum officia assumenda.</div>
                 </div>
                 <div class="vertical">
                     <img class="top" src="bs.png" alt="">
                     <div class="ver-title">
-                        Bootstrap Developer(202$)
+                        Bootstrap Developer (2024)
                     </div>
                     <div class="ver-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora, doloremque quam adipisci amet beatae nulla optio, suscipit saepe praesentium numquam nobis. Minus, sunt officia? Aut harum molestias voluptatum officia assumenda.</div>
                 </div>
