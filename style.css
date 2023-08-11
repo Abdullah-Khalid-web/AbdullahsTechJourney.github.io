@@ -5,7 +5,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: rgba(6, 5, 85, 0.959);
     background-image: url(back6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,6 +66,7 @@ nav ul li a:hover {
 
 .firstsection {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
     margin: 120px 0;
@@ -153,7 +153,6 @@ main hr {
     border: 0;
     color: white;
     height: 2px;
-
     background-color: aliceblue;
     margin: 56px 0px;
     display: flex;
@@ -177,7 +176,8 @@ main hr {
 .ver-title {
     position: relative;
     top: 70px;
-    left: -40px;
+    left: -30px;
+    font-size: 15px;
     font-weight: bold;
     color: rgb(0, 0, 0);
 }
@@ -190,6 +190,7 @@ main hr {
     left: -40px;
     width: 12vw;
     font-size: 12px;
+    word-break: break-all
 }
 
 footer {
@@ -205,18 +206,22 @@ footer {
     align-items: center;
     color: rgb(12, 9, 172);
     justify-content: space-around;
+    font-weight: bolder;
 }
 
 .footer div {
-    width: 220px;
+    width: 267.5px;
 }
-
+.footer-first{
+    font-size: 1.4rem;
+}
 footer li {
     list-style: none;
 }
 
 footer li a {
     text-decoration: none;
+    font-weight: bolder;
     color: rgb(12, 9, 172);
     margin-left: 10px;
 }
@@ -241,10 +246,22 @@ footer li a:hover {
     padding: 0 23px;
     color: aliceblue;
 }
-
+@media (max-width: 1700px){
+     .secondsection {
+        height: 100vh;
+    }
+}
+@media (max-width: 1250px){
+    footer {
+        height: 350px;
+    }
+    .secondsection {
+        height: 95vh;
+    }
+}
 @media (max-width: 1000px) {
     .secondsection {
-        height: 80vh;
+        height: 92vh;
     }
 
     .leftsection {
@@ -266,6 +283,9 @@ footer li a:hover {
 }
 
 @media (max-width: 800px) {
+    .secondsection {
+        height: 98vh;
+    }
     .left {
         font-size: 1.2rem;
     }
@@ -287,11 +307,6 @@ footer li a:hover {
         width: 80%;
         padding: 8px;
     }
-
-    .secondsection {
-        height: 85vh;
-    }
-
 }
 
 @media (max-width: 700px) {
@@ -330,10 +345,14 @@ footer li a:hover {
         font-size: 150%;
     }
 }
-@media (max-width: 522px) {
+@media (max-width: 620px){
+    .secondsection {
+        height: 115vh;
+    }
     footer {
         height: 500px;
     }
+
 }
 @media (max-width: 500px) {
 
@@ -358,7 +377,7 @@ footer li a:hover {
     }
 
     .secondsection {
-        height: 110vh;
+        height: 130vh;
     }
 
     .leftsection {
@@ -367,18 +386,26 @@ footer li a:hover {
 }
 
 @media (max-width: 400px) {
+    /* .firstsection{
+        display: block;
+        justify-content: center;
+        margin:30px ;
+    } */
     .left {
         font-size: 1.0rem;
     }
 
-    .right {}
+    nav ul li {
+        list-style: none;
+        margin: 5px 6px;
+    }
 
     .leftsection {
         font-size: 120%;
     }
 
     .secondsection {
-        height: 110vh;
+        height: 130vh;
     }
 
     .leftsection {
@@ -395,5 +422,14 @@ footer li a:hover {
         padding: 5px;
 
     }
+    .ver-title{
+        font-size: 12px;
+        left: -20px;
 
+    }
+    .ver-desc{
+        font-size: 10px;
+        left: -20px;
+    }
+    
 }
