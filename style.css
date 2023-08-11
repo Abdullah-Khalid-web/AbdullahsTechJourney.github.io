@@ -200,6 +200,7 @@ footer {
 
 .footer {
     display: flex;
+    flex-wrap: wrap;
     padding: 5vh 8vw;
     align-items: center;
     color: rgb(12, 9, 172);
@@ -260,7 +261,7 @@ footer li a:hover {
     }
 
     footer {
-        height: 300px;
+        height: 350px;
     }
 }
 
@@ -288,7 +289,7 @@ footer li a:hover {
     }
 
     .secondsection {
-        height: 80vh;
+        height: 85vh;
     }
 
 }
@@ -329,8 +330,13 @@ footer li a:hover {
         font-size: 150%;
     }
 }
-
+@media (max-width: 522px) {
+    footer {
+        height: 500px;
+    }
+}
 @media (max-width: 500px) {
+
     nav {
         height: 120px;
         width: 100vw;
@@ -357,10 +363,6 @@ footer li a:hover {
 
     .leftsection {
         font-size: 150%;
-    }
-
-    footer {
-        height: 350px;
     }
 }
 
