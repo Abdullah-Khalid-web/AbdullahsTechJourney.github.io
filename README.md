@@ -1,1 +1,0 @@
-# AbdullahsTechJourney.github.io
