@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <title>Snake and Ladder Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 5px 6px 10px rgb(44, 12, 187);
+            padding: 20px;
+            margin-bottom: 30px;
+            background-image: url('sankebackground.png');
+            /* background-repeat: space; */
+        }
+
+        #game-board {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            width: 400px;
+            height: 400px;
+            border: 2px solid #ccc;
+            margin: 0 auto;
+            background-image: url(snakeboard.png);
+            background-size: 100% 100%;
+            box-shadow: 0px 0px 50px black;
+
+        }
+
+        .cell {
+            /* border: 1px solid #ccc; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgb(233, 211, 18);
+        }
+
+        .player-1 {
+            background-image: url('player1.png');
+            background-size: cover;
+            box-shadow: 0 2px 4px rgb(255, 255, 255);
+        }
+
+        .player-2 {
+
+            background-image: url('player2.png');
+            background-size: cover;
+            box-shadow: 0 2px 4px rgb(0, 0, 0);
+            
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .game-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: rgb(44, 12, 187);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .game-button:hover {
+            background-color: rgb(44, 12, 187);
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .popup p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .popup button {
+            padding: 8px 16px;
+            font-size: 16px;
+            background-color: rgb(44, 12, 187);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .popup button:hover {
+            background-color: rgb(44, 12, 187);
+        }
+
+        h1 {
+            color: rgb(44, 12, 187);
+        }
+        @media (max-width:445px){
+            #game-board{
+                width: 300px;
+            height: 300px;
+            }
+        }
+        @media (max-width:345px){
+            #game-board{
+                width: 250px;
+            height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Snake and Ladder Game</h1>
+    <div class="container">
+        <div id="game-board"></div>
+    </div>
+    <div class="button-container">
+        <button id="start-button" class="game-button">Start Game</button>
+        <button id="dice-button" class="game-button" disabled>Roll Dice</button>
+        <button id="restart-button" class="game-button" disabled>Restart Game</button>
+    </div>
+    <div id="turn-display"></div>
+    <div id="dice-roll"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const boardSize = 10;
+            const gridSize = boardSize * boardSize;
+            const snakePositions = { 26: 4, 35: 2, 48: 18, 87: 56, 98: 68 };
+            const ladderPositions = { 2: 50, 6: 26, 19: 69, 67: 97, 62: 94, 35: 54};
+            const gameBoard = document.getElementById('game-board');
+            const cells = [];
+            let currentPlayer = 1;
+            const players = [
+                { name: '', position: 0 },
+                { name: '', position: 0 }
+            ];
+            const turnDisplay = document.getElementById('turn-display');
+
+            function createBoard() {
+                for (let i = 0; i < gridSize; i++) {
+                    const cell = document.createElement('div');
+                    cell.classList.add('cell');
+                    const rowIndex = Math.floor(i / boardSize);
+                    const colIndex = boardSize - 1 - (i % boardSize);
+                    cell.setAttribute('id', `cell-${rowIndex}-${colIndex}`);
+                    cells.push(cell);
+                    gameBoard.appendChild(cell);
+                }
+            }
+
+            function updatePlayers() {
+                cells.forEach(cell => cell.innerHTML = '');
+                for (let i = 0; i < players.length; i++) {
+                    const player = players[i];
+                    const currentPosition = player.position;
+                    const rowIndex = Math.floor((gridSize - 1 - currentPosition) / boardSize);
+                    const colIndex = boardSize - 1 - (currentPosition % boardSize);
+                    const currentCell = document.getElementById(`cell-${rowIndex}-${colIndex}`);
+                    const playerElement = document.createElement('div');
+                    playerElement.classList.add('player');
+                    playerElement.classList.add(`player-${i + 1}`);
+                    currentCell.appendChild(playerElement);
+                }
+            }
+
+            function rollDice() {
+                return Math.floor(Math.random() * 6) + 1;
+            }
+
+            function movePlayer(player) {
+                const diceRoll = rollDice();
+                const newPosition = player.position + diceRoll;
+                if (newPosition <= gridSize) {
+                    player.position = newPosition;
+                    if (newPosition in snakePositions) {
+                        player.position = snakePositions[newPosition];
+                        showSnakeLadderMessage(`${player.name} got bitten by a snake! Moved to position ${player.position}`);
+                    } else if (newPosition in ladderPositions) {
+                        player.position = ladderPositions[newPosition];
+                        showSnakeLadderMessage(`${player.name} found a ladder! Moved to position ${player.position}`);
+                    }
+                    if (player.position === gridSize) {
+                        showWinnerPopup(player.name);
+                        disableDice();
+                        enableRestart();
+                    }
+                }
+                return diceRoll;
+            }
+
+            function switchPlayer() {
+                currentPlayer = currentPlayer === 1 ? 0 : 1;
+            }
+
+            function disableDice() {
+                const diceButton = document.getElementById('dice-button');
+                diceButton.disabled = true;
+            }
+
+            function enableDice() {
+                const diceButton = document.getElementById('dice-button');
+                diceButton.disabled = false;
+            }
+
+            function disableRestart() {
+                const restartButton = document.getElementById('restart-button');
+                restartButton.disabled = true;
+            }
+
+            function enableRestart() {
+                const restartButton = document.getElementById('restart-button');
+                restartButton.disabled = false;
+            }
+
+            function showSnakeLadderMessage(message) {
+                const messageContainer = document.createElement('div');
+                messageContainer.textContent = message;
+                document.body.appendChild(messageContainer);
+                setTimeout(() => {
+                    document.body.removeChild(messageContainer);
+                }, 2000);
+            }
+
+            function showWinnerPopup(winnerName) {
+                const popup = document.createElement('div');
+                popup.classList.add('popup');
+                const message = document.createElement('p');
+                message.textContent = `Congratulations! ${winnerName} wins the game!`;
+                const closeButton = document.createElement('button');
+                closeButton.textContent = 'Close';
+                closeButton.addEventListener('click', () => {
+                    document.body.removeChild(popup);
+                });
+                popup.appendChild(message);
+                popup.appendChild(closeButton);
+                document.body.appendChild(popup);
+            }
+            function restartGame() {
+                currentPlayer = 1;
+                players.forEach(player => {
+                    player.position = 0;
+                });
+                updatePlayers();
+                enableDice();
+                disableRestart();
+                displayPlayerTurn(players[currentPlayer].name);
+            }
+
+            function displayPlayerTurn(playerName) {
+                turnDisplay.textContent = `Current Turn: ${playerName}`;
+            }
+
+            function playGame() {
+                createBoard();
+                updatePlayers();
+
+                const diceButton = document.getElementById('dice-button');
+                const startButton = document.getElementById('start-button');
+                const restartButton = document.getElementById('restart-button');
+                const diceRollElement = document.getElementById('dice-roll');
+
+                startButton.addEventListener('click', () => {
+                    players[0].name = prompt("Enter Player 1 name:") || 'Player 1';
+                    players[1].name = prompt("Enter Player 2 name:") || 'Player 2';
+                    startButton.disabled = true;
+                    enableDice();
+                    displayPlayerTurn(players[currentPlayer].name);
+                });
+
+                diceButton.addEventListener('click', () => {
+                    const currentPlayerObj = players[currentPlayer];
+                    const diceRoll = movePlayer(currentPlayerObj);
+                    updatePlayers();
+                    switchPlayer();
+                    displayPlayerTurn(players[currentPlayer].name);
+                    diceRollElement.textContent = `Dice Roll: ${diceRoll}`;
+                });
+
+                restartButton.addEventListener('click', () => {
+                    restartGame();
+                });
+            }
+
+            playGame();
+        });
+    </script>
+</body>
+
+</html>
