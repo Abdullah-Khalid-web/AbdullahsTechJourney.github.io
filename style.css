@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
 }
-
+html {
+    scroll-behavior: smooth;
+  }
 body {
     font-family: 'Lato', sans-serif;
     background-image: url(back6.jpg);
@@ -14,15 +16,11 @@ body {
     overflow-x: hidden;
     background-color: rgb(66, 62, 62);
 }
-/* body::selection{
-    background-color: red;
-    color: red;
-} */
-header {
-    /* position: sticky;
+/* header {
+     position: sticky;
     top: 0;
-    z-index: 200; */
-}
+    z-index: 200; 
+} */
 
 nav {
     width: 100vw;
@@ -51,8 +49,6 @@ nav ul {
 nav ul li {
     list-style: none;
     margin: 0 23px;
-    transition: red 0.3s;
-
 }
 
 nav ul li a {
@@ -60,6 +56,7 @@ nav ul li a {
     text-decoration: none;
     letter-spacing: 1.5px;
     position: relative;
+    transition: 0.3s ease;
 }
 nav ul li a:after{
     content: "";
@@ -73,7 +70,7 @@ nav ul li a:after{
 }
 nav ul li a:hover:after{
     width: 100%;
-    border-radius: 50%;
+    border-radius: 3px;
 
   } 
 nav ul li a:hover {
@@ -164,6 +161,10 @@ main hr {
     margin: auto;
 
 }
+.fourthsection .about123{
+    font-size: 2rem;
+    color: rgb(187, 186, 253);
+}
 .fourthsection h1{
     color: rgb(150, 148, 248);
     font-size: 1.5rem;
@@ -184,8 +185,9 @@ main hr {
    color: white;
 }
 .blue{
-    color: rgb(93, 92, 160);
+    color: #252525;
     font-size: 2rem;
+    text-transform: capitalize;
 }
 .secondsection {
     max-width: 80vw;
@@ -196,6 +198,7 @@ main hr {
 
 .secondsection h1 {
     font-size: 2rem;
+    color: rgb(187, 186, 253);
 }
 
 .gray {
@@ -242,7 +245,7 @@ main hr {
     color: #ffffff;
     left: -50px;
     width: 13vw;
-    font-size: 12px;
+    font-size: 13px;
     word-break: break-all
 }
 .thirdsection{
@@ -253,8 +256,11 @@ main hr {
     margin-bottom: 50px;
 }
 .thirdsection h1{
-    font-size: 2rem;
     font-weight: bolder;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    font-size: 2rem;
+    color: rgb(187, 186, 253);
 }
 .thirdsection li{
     list-style: none;
@@ -273,6 +279,7 @@ footer {
     color: white;
     height: 250px;
     opacity: 0.7;
+    
 }
 
 .footer {
@@ -286,7 +293,7 @@ footer {
 }
 
 .footer div {
-    width: 267.5px;
+    width: 268px;
 }
 
 .footer-first {
@@ -441,7 +448,7 @@ footer li a:hover {
 
 @media (max-width: 620px) {
     .secondsection {
-        height: 115vh;
+        height: 120vh;
     }
 
     footer {
@@ -471,7 +478,7 @@ footer li a:hover {
     }
 
     .secondsection {
-        height: 130vh;
+        height: 140vh;
     }
 
     .leftsection {
@@ -524,7 +531,7 @@ footer li a:hover {
     }
 
     .ver-desc {
-        font-size: 11px;
+        font-size: 12px;
         left: -20px;
     }
 
@@ -533,5 +540,18 @@ footer li a:hover {
     nav ul li a {
         letter-spacing: 0px;
         
+    }
+}
+@media (max-width: 360px){
+    .secondsection {
+        height: 150vh;
+    }
+}
+@media (max-width: 300px){
+    .secondsection {
+        height: 180vh;
+    }
+    footer {
+        height: 600px;
     }
 }
