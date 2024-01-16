@@ -8,7 +8,8 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-    background: linear-gradient(135deg,#031538,#383737);
+    background: linear-gradient(135deg,#04215b,#383737);
+    
 }
 nav {
     width: 100vw;
@@ -16,7 +17,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 70px;
-    background-color: #1b093e;
+    background-color: #090528;
     color: rgb(131, 129, 255);
     opacity: 0.7;
 }
@@ -123,8 +124,12 @@ nav ul li a:hover {
 
 .leftsection {
     font-weight: bold;
-    font-size: 250%;
+    font-size: 2rem;
     color: white;
+    min-width: 300px;
+}
+.rightsection{
+    min-width: 300px;
 }
 
 .img1 {
@@ -262,9 +267,9 @@ main hr {
 }
 footer {
     color: white;
-    background-color: #1b093e;
+    background-color: #303048;
     height: 250px;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     
 }
 
@@ -468,11 +473,11 @@ footer li a:hover {
     }
 }
 @media (max-width: 420px) {
+ 
     nav ul li a {
-        letter-spacing: 0.5px;
-        
+        letter-spacing: 0px;
+        }
     }
-}
 @media (max-width: 400px) {
     .left {
         font-size: 1.0rem;
@@ -483,9 +488,6 @@ footer li a:hover {
         margin: 5px 6px;
     }
 
-    .leftsection {
-        font-size: 120%;
-    }
 
     .secondsection {
         height: 130vh;
@@ -518,13 +520,15 @@ footer li a:hover {
     }
 
 }
-@media (max-width: 420px) {
-    nav ul li a {
-        letter-spacing: 0px;
-        
-    }
-}
+
 @media (max-width: 360px){
+    .leftsection {
+        min-width: 200px;
+    }
+    .rightsection{
+        min-width: 200px;
+
+    }
     .secondsection {
         height: 150vh;
     }
@@ -533,6 +537,7 @@ footer li a:hover {
     }
 }
 @media (max-width: 300px){
+
     .secondsection {
         height: 180vh;
     }
