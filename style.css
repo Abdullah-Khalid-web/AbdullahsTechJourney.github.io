@@ -8,8 +8,8 @@ html {
 body {
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
-    background: linear-gradient(135deg,#04215b,#383737);
-    
+    /* background: linear-gradient(135deg,,#383737); */
+    background-color: #010818;
 }
 nav {
     width: 100vw;
@@ -17,13 +17,14 @@ nav {
     justify-content: space-around;
     align-items: center;
     height: 70px;
-    background-color: #090528;
     color: rgb(131, 129, 255);
-    opacity: 0.7;
+    z-index: 10;
+    opacity: 0.8;
 }
 
 nav img {
     width: 63px;
+    height: 63px;
     border: 2px solid rgb(131, 129, 255);;
     border-radius: 100%;
     margin: 5px;
@@ -73,6 +74,8 @@ nav ul li a:hover {
     display: flex;
     text-align: center;
     align-items: center;
+    padding: 12px;
+
 }
 
 .right {
@@ -82,9 +85,9 @@ nav ul li a:hover {
 .firstsection {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    margin: 120px 0;
+    margin: 0px 0;
 }
 
 .buttons {
@@ -127,13 +130,15 @@ nav ul li a:hover {
     font-size: 2rem;
     color: white;
     min-width: 300px;
+    padding: 10px;
 }
 .rightsection{
     min-width: 300px;
 }
 
 .img1 {
-    width: 100%;
+    filter: grayscale(0) drop-shadow(0px 0px 10px  rgb(150, 148, 248));
+    width: 100%;;
 }
 
 .purple,
@@ -267,7 +272,7 @@ main hr {
 }
 footer {
     color: white;
-    background-color: #303048;
+    background-color: #010c24;
     height: 250px;
     /* opacity: 0.7; */
     
@@ -371,6 +376,7 @@ footer li a:hover {
     .left {
         font-size: 1.2rem;
         font-weight: bold;
+        text-align: center;
     }
 
     .right {
@@ -394,8 +400,9 @@ footer li a:hover {
 
 @media (max-width: 700px) {
     nav {
-        height: 120px;
-        display: block;
+        padding: 10px;
+        text-align: center;
+        display: flex;
     }
 
     nav ul li {
@@ -403,8 +410,10 @@ footer li a:hover {
         margin: 0 15px;
     }
 
+    
     .left {
         font-size: 1.2rem;
+        text-align: center;
     }
 
     .right {
@@ -431,6 +440,9 @@ footer li a:hover {
     .leftsection {
         font-size: 150%;
     }
+    footer {
+        height: 500px;
+    }
 }
 
 @media (max-width: 620px) {
@@ -447,16 +459,19 @@ footer li a:hover {
 @media (max-width: 500px) {
 
     nav {
-        height: 120px;
         width: 100vw;
-    }
+        padding: 10px;
+        display: block;
 
+    }
+    
     nav ul li {
         list-style: none;
         margin: 0 10px;
     }
-
+    
     .left {
+        text-align: center;
         font-size: 1.0rem;
     }
 
@@ -470,6 +485,9 @@ footer li a:hover {
 
     .leftsection {
         font-size: 150%;
+    }
+    footer {
+        height: 550px;
     }
 }
 @media (max-width: 420px) {
@@ -517,6 +535,9 @@ footer li a:hover {
     .ver-desc {
         font-size: 12px;
         left: -20px;
+    }
+    footer {
+        height: 600px;
     }
 
 }
