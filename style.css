@@ -9,10 +9,10 @@ html {
     scroll-behavior: smooth;
 }
 
-:root{
+:root {
     --primary-color: rgb(131, 129, 255);
-    --secondary-color:#c90808;
-    
+    --secondary-color: white;
+
 }
 
 
@@ -21,19 +21,19 @@ body {
     background-color: #010818;
 }
 
-.red{
+.red {
     color: var(--secondary-color);
 }
 
-.text-white{
+.text-white {
     color: white;
 }
 
-.text-dark{
+.text-dark {
     color: #010818;
 }
 
-.light-blue{
+.light-blue {
     color: var(--primary-color);
 }
 
@@ -47,6 +47,16 @@ body {
     font-size: 2rem;
     text-transform: capitalize;
 }
+.text-pri{
+    color: var(--primary-color);
+}
+
+
+
+
+
+
+
 
 /* Header */
 nav {
@@ -57,7 +67,7 @@ nav {
     height: 70px;
     color: var(--primary-color);
     z-index: 10;
-    opacity: 0.8;
+
 }
 
 nav img {
@@ -90,7 +100,7 @@ nav ul li a {
 nav ul li a:after {
     content: "";
     position: absolute;
-    background-color: rgb(67, 65, 165);
+    background-color: var(--secondary-color);
     height: 3px;
     width: 0;
     left: 0;
@@ -105,7 +115,7 @@ nav ul li a:hover:after {
 }
 
 nav ul li a:hover {
-    color: rgb(67, 65, 165);
+    color: var(--secondary-color);
 
 }
 
@@ -122,7 +132,11 @@ nav ul li a:hover {
 .right {
     font-weight: bold;
 }
-
+section{
+    width: 80vw;
+    padding: auto;
+    margin: 20px auto 50px;
+}
 
 
 
@@ -134,23 +148,28 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     margin: 0px 0;
+    min-height: 100vh;
+    min-width: 100vw;
 }
+
+
 
 .buttons {
     padding: 30px 0;
     text-align: center;
 }
 
-.buttons img{
+.buttons img {
     width: 15px;
 }
 
 .btn {
     padding: 12px;
     background-color: var(--primary-color);
-    border: 2px solid black;
+    border: 0px solid var(--secondary-color);
     border-radius: 12px;
     cursor: pointer;
+    font-weight: bolder;
     margin-bottom: 10px;
     font-weight: bold;
     text-transform: uppercase;
@@ -159,20 +178,23 @@ nav ul li a:hover {
 }
 
 .btn:hover {
-    background-color: rgb(150, 148, 248);
-    box-shadow: 10px 12px 8px #1b093e;
+    background-color:var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0px 0px 18px var(--primary-color);
+    /* border: 2px solid var(--primary-color); */
 }
 
 .btn:active {
-    background-color: rgb(102, 99, 238);
-    
-    box-shadow: 0px 6px 8px var(--secondary-color);
+    background-color: var(--primary-color);
+
+    box-shadow: 0px 0px 8px var(--secondary-color);
     color: white;
 }
 
 
 .firstsection>div {
     width: 40%;
+    /* border: #010c24 10px solid; */
 }
 
 .leftsection {
@@ -181,6 +203,8 @@ nav ul li a:hover {
     color: white;
     min-width: 300px;
     padding: 10px;
+    justify-content: center;
+    text-align: center;
 }
 
 .rightsection {
@@ -190,7 +214,8 @@ nav ul li a:hover {
 .img1 {
     filter: grayscale(0) drop-shadow(0px 0px 88px var(--primary-color));
     width: 100%;
-    ;
+    max-height: 90vh;
+    object-fit: contain;
 }
 
 .purple,
@@ -213,17 +238,9 @@ main hr {
 
 
 /* About */
-.fourthsection {
-    max-width: 80vw;
-    margin: auto;
-
-}
-
-
 .fourthsection h1 {
     color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+
 }
 
 .fourthsection h2 {
@@ -237,11 +254,13 @@ main hr {
     color: white;
     font-size: 1.2rem;
 }
+
 .fourthsection p a {
     margin-bottom: 8px;
     color: white;
 }
-.fourthsection p a:hover{
+
+.fourthsection p a:hover {
     margin-bottom: 8px;
     color: var(--primary-color);
     transition: 0.3s;
@@ -259,28 +278,21 @@ main hr {
 
 
 /* skills-section */
-.skills-section {
-    max-width: 80vw;
-    margin: auto;
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--secondary-color);
+}
 
-    }
-    
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-        color: var(--secondary-color);
-        }
-        
-        .skill-category {
-            color: #f1f1f1;
+.skill-category {
+    color: #f1f1f1;
     margin-bottom: 20px;
 
 }
 
 .category-title {
-    font-size: 1.8rem;
     margin-bottom: 15px;
-    color:  var(--primary-color);
+    color: var(--primary-color);
 }
 
 .skill-list {
@@ -293,50 +305,10 @@ main hr {
     font-size: 1.2rem;
     margin-bottom: 5px;
 }
-.skill-list li img{
+
+.skill-list li img {
     width: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Projects */
-.thirdsection {
-    width: 80vw;
-    padding: auto;
-    margin: 20px auto 50px;
-}
-
-.thirdsection li {
-    list-style: none;
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-
-.thirdsection a {
-    color: white;
-    text-underline-offset: 6px;
-}
-
-.thirdsection a:hover {
-    transition: 0.3s;
-    color: var(--primary-color);
-}
-
-
-
-
 
 
 
@@ -350,10 +322,6 @@ main hr {
 /* Certificate Section */
 .certificates-section {
     padding: 40px 20px;
-    /* background-color: #f1f1f1;
-    border-radius: 20px;
-    margin: 20px; */
-    text-align: center;
 }
 
 
@@ -364,10 +332,11 @@ main hr {
     gap: 20px;
     justify-items: center;
     align-items: center;
-
+    
 }
 
 .certificate-item {
+    text-align: center;
     background-color: #f1f1f1;
     padding: 15px;
     border-radius: 10px;
@@ -403,10 +372,73 @@ main hr {
 
 
 
+/* Projects */
+.project{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-item{
+    padding: 10px;
+    text-align: center;
+    width: 300px;
+    background-color: #20242d    ;
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 0px 13px var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 11px;
+    height: 250px;
+}
+.project-item:hover{
+    box-shadow: 0px 0px 33px var(--primary-color);
+    transition: 0.8s;
+}
+
+.project-item:not(:hover) {
+    opacity: 0.8;
+}
+
+
+.project-item img{
+    width: 100%;
+    margin-bottom: 10px;
+
+    object-fit: contain;
+}
+
+.project-item a {
+    text-underline-offset: 3px;
+}
+.project-item a:hover {
+    color: var(--primary-color);
+    transition: 0.3s;
+}
 
 
 
 
+
+/* Contact */
+.contact a{
+    color: var(--secondary-color);
+    margin-top: 12px;
+}
+.contact img{
+
+    margin-top: 8px;
+    margin-right: 15px;
+}
+.contact a:hover{
+    color: var(--primary-color);
+    transition: 0.2s;
+    margin-top: 12px;
+}
 
 
 
@@ -422,16 +454,13 @@ main hr {
 /* Footer */
 footer {
     color: white;
-    background-color: #010c24;
     height: 250px;
-    /* opacity: 0.7; */
+    padding: 20px;
+    background-color: #010c24;
     background-image: url('footer-bg1.svg');
-    background-size: cover;  /* Ensures the image covers the entire footer */
-    background-position: center;  /* Centers the image */
-    background-repeat: no-repeat;  /* Prevents the image from repeating */
-    padding: 20px; /* Optional: Add padding to the footer content */
-    color: white;  /* Optional: Text color */
-
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .footer {
