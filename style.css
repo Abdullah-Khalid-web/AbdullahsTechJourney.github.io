@@ -89,7 +89,7 @@ nav ul li {
     margin: 0 23px;
 }
 
-nav ul li a {
+nav a {
     color: var(--primary-color);
     text-decoration: none;
     letter-spacing: 1.5px;
@@ -97,7 +97,7 @@ nav ul li a {
     transition: 0.3s ease;
 }
 
-nav ul li a:after {
+nav a:after {
     content: "";
     position: absolute;
     background-color: var(--secondary-color);
@@ -108,13 +108,13 @@ nav ul li a:after {
     transition: 0.3s;
 }
 
-nav ul li a:hover:after {
+nav a:hover:after {
     width: 100%;
     border-radius: 3px;
 
 }
 
-nav ul li a:hover {
+nav a:hover {
     color: var(--secondary-color);
 
 }
@@ -316,6 +316,24 @@ main hr {
 
 
 
+/* certificate */
+
+a {
+    text-decoration: none; /* Removes the default underline */
+    color: #007BFF; /* Sets the text color */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.3s ease, transform 0.3s ease; /* Adds smooth transitions */
+}
+
+a:hover {
+    color: #0056b3; /* Changes the color when hovered */
+    transform: scale(1.05); /* Slightly enlarges the text on hover */
+}
+
+a:focus {
+    outline: none; /* Removes the default focus outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Adds a blue glow around the link */
+}
 
 
 
