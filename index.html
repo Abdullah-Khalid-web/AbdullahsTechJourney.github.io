@@ -37,6 +37,7 @@
             font-family: 'Roboto', sans-serif;
             color: #333;
             line-height: 1.6;
+            padding-top: 76px; /* Add padding for fixed navbar */
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -47,6 +48,20 @@
         .navbar-brand {
             font-weight: 700;
             font-size: 1.5rem;
+            color: var(--primary) !important;
+        }
+        
+        .navbar {
+            background: white !important;
+        }
+        
+        .nav-link {
+            color: var(--dark) !important;
+            font-weight: 500;
+            margin: 0 5px;
+        }
+        
+        .nav-link:hover {
             color: var(--primary) !important;
         }
         
@@ -280,6 +295,7 @@
             margin-bottom: 15px;
         }
         
+        /* Timeline Fix */
         .timeline {
             position: relative;
             padding-left: 30px;
@@ -299,6 +315,7 @@
         .timeline-item {
             position: relative;
             margin-bottom: 30px;
+            padding-left: 20px;
         }
         
         .timeline-item:before {
@@ -329,7 +346,57 @@
             font-weight: 500;
         }
         
+        /* Expertise Cards Fix */
+        .expertise-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+        }
+        
+        /* Tech Tag List Fix */
+        .tech-tag-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        
+        .tech-tag-sm {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
         @media (max-width: 768px) {
+            body {
+                padding-top: 56px;
+            }
+            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -342,13 +409,279 @@
                 font-size: 2rem;
             }
         }
+
+        /* Graphic Design Section Styles */
+        #graphic-design {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .design-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .design-category-btn {
+            padding: 10px 25px;
+            border: 2px solid var(--primary);
+            background: white;
+            color: var(--primary);
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .design-category-btn:hover,
+        .design-category-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+        }
+
+        .design-carousel-container {
+            position: relative;
+            padding: 20px 40px;
+        }
+
+        .design-carousel {
+            overflow: hidden;
+            border-radius: 15px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .design-slide {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .design-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .design-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+
+        .design-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .design-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .design-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .design-info {
+            padding: 20px;
+        }
+
+        .design-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .design-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .design-info .badge {
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: 15px;
+            background-color: var(--primary) !important;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn {
+            left: 0;
+        }
+
+        .next-btn {
+            right: 0;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        .dot:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+
+        /* Statistics */
+        .stat-box {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+
+        /* Modal Styles */
+        .modal-content {
+            border-radius: 15px;
+            border: none;
+        }
+
+        .modal-body img {
+            max-height: 70vh;
+            object-fit: contain;
+            width: 100%;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .design-category-btn {
+                padding: 8px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .carousel-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+            
+            .design-carousel-container {
+                padding: 20px 30px;
+            }
+            
+            .prev-btn {
+                left: -10px;
+            }
+            
+            .next-btn {
+                right: -10px;
+            }
+            
+            .design-item img {
+                height: 200px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .design-carousel {
+                padding: 15px;
+            }
+            
+            .design-item {
+                margin-bottom: 20px;
+            }
+            
+            .carousel-btn {
+                display: flex;
+            }
+            
+            .carousel-dots {
+                margin-top: 20px;
+            }
+            
+            .design-carousel-container {
+                padding: 20px 15px;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#home">
                 <i class="fas fa-code me-2"></i>Abdullah Khalid
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -367,6 +700,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#graphic-design">Graphic Design</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#certificates">Certificates</a>
@@ -409,130 +745,129 @@
     </section>
 
     <!-- About Section -->
-<section id="about" class="section-padding">
-    <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="row">
-            <div class="col-lg-6">
-                <h3 class="mb-4">Software Engineer & Graphic Designer</h3>
-                <p class="mb-4">I'm a passionate Software Engineering student at BUITEMS with a keen interest in full-stack web development, cybersecurity, and graphic design. Based in Quetta, Pakistan, I'm constantly learning and experimenting with new technologies to enhance my skills.</p>
-                
-                <div class="experience-badge">Current Role</div>
-                <h4>Junior Software Developer Intern at BRSP</h4>
-                <p>Working as a Junior Software Developer Intern at Balochistan Rural Support Program (BRSP), contributing to software solutions that support rural development initiatives and community empowerment projects across Balochistan.</p>
-                
-                <h4 class="mt-4">Focus Areas:</h4>
-                <div class="tech-stack">
-                    <span class="tech-tag">Full Stack Web Development</span>
-                    <span class="tech-tag">Graphic Design</span>
-                    <span class="tech-tag">UI/UX Design</span>
-                    <span class="tech-tag">Cybersecurity</span>
-                    <span class="tech-tag">Enterprise Software</span>
-                    <span class="tech-tag">Community Development Tech</span>
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Software Engineer & Graphic Designer</h3>
+                    <p class="mb-4">I'm a passionate Software Engineering student at BUITEMS with a keen interest in full-stack web development, cybersecurity, and graphic design. Based in Quetta, Pakistan, I'm constantly learning and experimenting with new technologies to enhance my skills.</p>
+                    
+                    <div class="experience-badge">Current Role</div>
+                    <h4>Junior Software Developer Intern at BRSP</h4>
+                    <p>Working as a Junior Software Developer Intern at Balochistan Rural Support Program (BRSP), contributing to software solutions that support rural development initiatives and community empowerment projects across Balochistan.</p>
+                    
+                    <h4 class="mt-4">Focus Areas:</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Full Stack Web Development</span>
+                        <span class="tech-tag">Graphic Design</span>
+                        <span class="tech-tag">UI/UX Design</span>
+                        <span class="tech-tag">Cybersecurity</span>
+                        <span class="tech-tag">Enterprise Software</span>
+                        <span class="tech-tag">Community Development Tech</span>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="#contact" class="btn btn-primary me-2">
+                            <i class="fas fa-paper-plane me-1"></i> Contact Me
+                        </a>
+                        <a href="#projects" class="btn btn-outline-primary">
+                            <i class="fas fa-code me-1"></i> View Projects
+                        </a>
+                    </div>
                 </div>
-                
-                <div class="mt-4">
-                    <a href="#contact" class="btn btn-primary me-2">
-                        <i class="fas fa-paper-plane me-1"></i> Contact Me
-                    </a>
-                    <a href="#projects" class="btn btn-outline-primary">
-                        <i class="fas fa-code me-1"></i> View Projects
-                    </a>
+                <div class="col-lg-6">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Junior Software Developer Intern</h5>
+                                <p class="text-muted">Balochistan Rural Support Program (BRSP) | Nov 2025 - Present</p>
+                                <p>Developing software solutions for rural development initiatives, contributing to projects that empower local communities through technology.</p>
+                                <div class="tech-tag-list">
+                                    <span class="tech-tag-sm">Enterprise Software</span>
+                                    <span class="tech-tag-sm">Web Development</span>
+                                    <span class="tech-tag-sm">Database Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>President - BUITEMS Developers Club</h5>
+                                <p class="text-muted">2023 - Present</p>
+                                <p>Leading a team of 50+ developers, organizing technical workshops, hackathons, and community events to foster innovation and skill development.</p>
+                                <div class="tech-tag-list">
+                                    <span class="tech-tag-sm">Leadership</span>
+                                    <span class="tech-tag-sm">Event Management</span>
+                                    <span class="tech-tag-sm">Community Building</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Freelance Graphic Designer</h5>
+                                <p class="text-muted">2023 - Present</p>
+                                <p>Creating visual identities, marketing materials, and digital designs for clients across various industries using Adobe Creative Suite and Figma.</p>
+                                <div class="tech-tag-list">
+                                    <span class="tech-tag-sm">Adobe Illustrator</span>
+                                    <span class="tech-tag-sm">Photoshop</span>
+                                    <span class="tech-tag-sm">Figma</span>
+                                    <span class="tech-tag-sm">Brand Identity</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Software Engineering Student</h5>
+                                <p class="text-muted">BUITEMS | 2022 - Present</p>
+                                <p>Pursuing Bachelor's degree with focus on web technologies, software architecture, cybersecurity, and software development methodologies.</p>
+                                <div class="tech-tag-list">
+                                    <span class="tech-tag-sm">Academic Excellence</span>
+                                    <span class="tech-tag-sm">Research</span>
+                                    <span class="tech-tag-sm">Technical Skills</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        
-                        <div class="timeline-content">
-                            <h5>Junior Software Developer Intern</h5>
-                            <p class="text-muted">Balochistan Rural Support Program (BRSP) | Nov 2025 - Present</p>
-                            <p>Developing software solutions for rural development initiatives, contributing to projects that empower local communities through technology.</p>
-                            <div class="tech-tag-list">
-                                <span class="tech-tag-sm">Enterprise Software</span>
-                                <span class="tech-tag-sm">Web Development</span>
-                                <span class="tech-tag-sm">Database Management</span>
+            
+            <!-- Skills & Expertise Summary -->
+            <div class="row mt-5 pt-5">
+                <div class="col-lg-12">
+                    <h3 class="text-center mb-4">Professional Expertise</h3>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="expertise-card text-center p-4">
+                                <div class="expertise-icon mb-3">
+                                    <i class="fas fa-code fa-2x"></i>
+                                </div>
+                                <h5>Software Development</h5>
+                                <p class="text-muted">Full-stack development with modern technologies, creating scalable and efficient software solutions.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h5>President - BUITEMS Developers Club</h5>
-                            <p class="text-muted">2023 - Present</p>
-                            <p>Leading a team of 50+ developers, organizing technical workshops, hackathons, and community events to foster innovation and skill development.</p>
-                            <div class="tech-tag-list">
-                                <span class="tech-tag-sm">Leadership</span>
-                                <span class="tech-tag-sm">Event Management</span>
-                                <span class="tech-tag-sm">Community Building</span>
+                        <div class="col-md-4 mb-4">
+                            <div class="expertise-card text-center p-4">
+                                <div class="expertise-icon mb-3">
+                                    <i class="fas fa-paint-brush fa-2x"></i>
+                                </div>
+                                <h5>Graphic Design</h5>
+                                <p class="text-muted">Creating compelling visual designs that communicate brand identity and enhance user experience.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h5>Freelance Graphic Designer</h5>
-                            <p class="text-muted">2023 - Present</p>
-                            <p>Creating visual identities, marketing materials, and digital designs for clients across various industries using Adobe Creative Suite and Figma.</p>
-                            <div class="tech-tag-list">
-                                <span class="tech-tag-sm">Adobe Illustrator</span>
-                                <span class="tech-tag-sm">Photoshop</span>
-                                <span class="tech-tag-sm">Figma</span>
-                                <span class="tech-tag-sm">Brand Identity</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-content">
-                            <h5>Software Engineering Student</h5>
-                            <p class="text-muted">BUITEMS | 2022 - Present</p>
-                            <p>Pursuing Bachelor's degree with focus on web technologies, software architecture, cybersecurity, and software development methodologies.</p>
-                            <div class="tech-tag-list">
-                                <span class="tech-tag-sm">Academic Excellence</span>
-                                <span class="tech-tag-sm">Research</span>
-                                <span class="tech-tag-sm">Technical Skills</span>
+                        <div class="col-md-4 mb-4">
+                            <div class="expertise-card text-center p-4">
+                                <div class="expertise-icon mb-3">
+                                    <i class="fas fa-handshake fa-2x"></i>
+                                </div>
+                                <h5>Community Leadership</h5>
+                                <p class="text-muted">Leading technical communities and initiatives that promote learning and innovation.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- Skills & Expertise Summary -->
-        <div class="row mt-5 pt-5">
-            <div class="col-lg-12">
-                <h3 class="text-center mb-4">Professional Expertise</h3>
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card text-center p-4">
-                            <div class="expertise-icon mb-3">
-                                <i class="fas fa-code fa-2x text-primary"></i>
-                            </div>
-                            <h5>Software Development</h5>
-                            <p class="text-muted">Full-stack development with modern technologies, creating scalable and efficient software solutions.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card text-center p-4">
-                            <div class="expertise-icon mb-3">
-                                <i class="fas fa-paint-brush fa-2x text-primary"></i>
-                            </div>
-                            <h5>Graphic Design</h5>
-                            <p class="text-muted">Creating compelling visual designs that communicate brand identity and enhance user experience.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <div class="expertise-card text-center p-4">
-                            <div class="expertise-icon mb-3">
-                                <i class="fas fa-handshake fa-2x text-primary"></i>
-                            </div>
-                            <h5>Community Leadership</h5>
-                            <p class="text-muted">Leading technical communities and initiatives that promote learning and innovation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Skills Section -->
     <section id="skills" class="section-padding bg-light">
@@ -569,7 +904,6 @@
                         <div class="tech-stack justify-content-center">
                             <span class="tech-tag">MySQL</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">MongoDB</span>
                         </div>
                     </div>
                 </div>
@@ -619,7 +953,6 @@
                             <span class="tech-tag">Git</span>
                             <span class="tech-tag">GitHub</span>
                             <span class="tech-tag">VS Code</span>
-                            <span class="tech-tag">Docker</span>
                         </div>
                     </div>
                 </div>
@@ -754,8 +1087,178 @@
         </div>
     </section>
 
+    <!-- Graphic Design Section -->
+    <section id="graphic-design" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Graphic Design Portfolio</h2>
+            <p class="text-center mb-5">A showcase of my creative work including posters, logos, banners, and digital designs</p>
+
+            <!-- Design Categories -->
+            <!-- <div class="design-categories text-center mb-5">
+                <button class="design-category-btn active" data-category="all">All Designs</button>
+                <button class="design-category-btn" data-category="posters">Posters</button>
+                <button class="design-category-btn" data-category="logos">Logos</button>
+                <button class="design-category-btn" data-category="banners">Banners</button>
+            </div> -->
+
+            <!-- Design Carousel -->
+            <div class="design-carousel-container">
+                <button class="carousel-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="design-carousel">
+                    <!-- Slide 1 -->
+                    <div class="design-slide active" data-category="posters">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/computer graphics.jpg" alt="Computer Graphics Poster">
+                                    <div class="design-info">
+                                        <h5>Computer Graphics Workshop</h5>
+                                        <p>Poster design for university workshop</p>
+                                        <span class="badge bg-primary">Adobe Illustrator</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/emerging.jpg" alt="Emerging Tech Poster">
+                                    <div class="design-info">
+                                        <h5>Emerging Tech Seminar</h5>
+                                        <p>Poster for technology seminar event</p>
+                                        <span class="badge bg-primary">Photoshop</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/front end.jpg" alt="Frontend Workshop Poster">
+                                    <div class="design-info">
+                                        <h5>Frontend Workshop</h5>
+                                        <p>Web development workshop poster</p>
+                                        <span class="badge bg-primary">canva</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="design-slide" data-category="logos">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/hacker cup.png" alt="Hacker Cup Logo">
+                                    <div class="design-info">
+                                        <h5>Hacker Cup </h5>
+                                        <p>coding competition</p>
+                                        <span class="badge bg-primary">Illustrator</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/java bootcamp.jpg" alt="Java Bootcamp ">
+                                    <div class="design-info">
+                                        <h5>Java Bootcamp</h5>
+                                        <p>programming bootcamp</p>
+                                        <span class="badge bg-primary">Illustrator</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/Join BDC.jpg" alt="BDC Logo">
+                                    <div class="design-info">
+                                        <h5>Developers Club </h5>
+                                        <p>Student developers club</p>
+                                        <span class="badge bg-primary">Canva</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="design-slide" data-category="banners">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/teckweek.jpg" alt="TechWeek Banner">
+                                    <div class="design-info">
+                                        <h5>TechWeek Banner</h5>
+                                        <p>Banner for technology week event</p>
+                                        <span class="badge bg-primary">Photoshop</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/tekken.jpg" alt="Tekken Tournament Banner">
+                                    <div class="design-info">
+                                        <h5>Gaming Tournament</h5>
+                                        <p>Banner for gaming competition</p>
+                                        <span class="badge bg-primary">Illustrator</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="design-item">
+                                    <img src="gd/valorant.jpg" alt="Valorant Tournament Banner">
+                                    <div class="design-info">
+                                        <h5>Valorant Tournament</h5>
+                                        <p>Esports tournament banner design</p>
+                                        <span class="badge bg-primary">Photoshop</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn next-btn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="row mt-5 pt-4">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Design Modal for Full View -->
+    <div class="modal fade" id="designModalFull" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="designModalTitle"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="fullDesignImg" src="" alt="Design Full View" class="img-fluid rounded">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" id="downloadFullDesign" class="btn btn-primary" download>
+                        <i class="fas fa-download me-1"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Certificates Section -->
-    <section id="certificates" class="section-padding bg-light">
+    <section id="certificates" class="section-padding">
         <div class="container">
             <h2 class="section-title">Certifications</h2>
             <div class="row">
@@ -804,7 +1307,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section-padding">
+    <section id="contact" class="section-padding bg-light">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="row">
@@ -883,13 +1386,14 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#skills">Skills</a></li>
                         <li><a href="#projects">Projects</a></li>
+                        <li><a href="#graphic-design">Graphic Design</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>Services</h5>
                     <ul class="footer-links">
                         <li><a href="#projects">Web Development</a></li>
-                        <li><a href="#projects">Graphic Design</a></li>
+                        <li><a href="#graphic-design">Graphic Design</a></li>
                         <li><a href="#projects">UI/UX Design</a></li>
                         <li><a href="#projects">Software Solutions</a></li>
                     </ul>
@@ -956,10 +1460,180 @@
             window.addEventListener('scroll', function() {
                 const navbar = document.querySelector('.navbar');
                 if(window.scrollY > 100) {
-                    navbar.classList.add('navbar-scrolled');
+                    navbar.classList.add('shadow');
                 } else {
-                    navbar.classList.remove('navbar-scrolled');
+                    navbar.classList.remove('shadow');
                 }
+            });
+        });
+
+        // Graphic Design Carousel
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables
+            const slides = document.querySelectorAll('.design-slide');
+            const dots = document.querySelectorAll('.dot');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const categoryBtns = document.querySelectorAll('.design-category-btn');
+            let currentSlide = 0;
+            let totalSlides = slides.length;
+            
+            // Initialize first slide
+            showSlide(currentSlide);
+            
+            // Next slide function
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            // Previous slide function
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            // Show specific slide
+            function showSlide(n) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                    slide.style.display = 'none';
+                });
+                
+                // Remove active class from all dots
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                // Show current slide and activate dot
+                slides[n].classList.add('active');
+                slides[n].style.display = 'block';
+                
+                // Activate corresponding dot
+                dots[n].classList.add('active');
+                
+                // Update category filter based on current slide
+                const currentCategory = slides[n].getAttribute('data-category');
+                updateCategoryFilter(currentCategory);
+            }
+            
+            // Update category filter buttons
+            function updateCategoryFilter(category) {
+                categoryBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-category') === category) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            // Filter by category
+            function filterByCategory(category) {
+                if (category === 'all') {
+                    // Show all slides
+                    slides.forEach((slide, index) => {
+                        slide.style.display = 'block';
+                        if (index === 0) {
+                            slide.classList.add('active');
+                            currentSlide = 0;
+                        } else {
+                            slide.classList.remove('active');
+                        }
+                    });
+                    updateDots();
+                } else {
+                    // Hide all slides first
+                    slides.forEach(slide => {
+                        slide.classList.remove('active');
+                        slide.style.display = 'none';
+                    });
+                    
+                    // Show matching slides
+                    const matchingSlides = Array.from(slides).filter(slide => 
+                        slide.getAttribute('data-category') === category
+                    );
+                    
+                    if (matchingSlides.length > 0) {
+                        matchingSlides[0].style.display = 'block';
+                        matchingSlides[0].classList.add('active');
+                        
+                        // Update current slide index
+                        const firstMatchingIndex = Array.from(slides).indexOf(matchingSlides[0]);
+                        currentSlide = firstMatchingIndex;
+                        updateDots();
+                    }
+                }
+            }
+            
+            // Update dots based on current slide
+            function updateDots() {
+                dots.forEach((dot, index) => {
+                    if (index === currentSlide) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Event Listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            
+            // Dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentSlide = index;
+                    showSlide(currentSlide);
+                });
+            });
+            
+            // Category filter buttons
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter slides
+                    filterByCategory(category);
+                });
+            });
+            
+            // Auto slide every 5 seconds
+            let slideInterval = setInterval(nextSlide, 5000);
+            
+            // Pause auto slide on hover
+            const carouselContainer = document.querySelector('.design-carousel-container');
+            carouselContainer.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+            
+            // Design item click for modal
+            const designModalFull = new bootstrap.Modal(document.getElementById('designModalFull'));
+            const fullDesignImg = document.getElementById('fullDesignImg');
+            const designModalTitle = document.getElementById('designModalTitle');
+            const downloadFullDesign = document.getElementById('downloadFullDesign');
+            
+            document.querySelectorAll('.design-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    const title = this.querySelector('h5').textContent;
+                    
+                    if (img && img.src) {
+                        fullDesignImg.src = img.src;
+                        designModalTitle.textContent = title;
+                        downloadFullDesign.href = img.src;
+                        downloadFullDesign.download = title.toLowerCase().replace(/\s+/g, '-') + '.jpg';
+                        
+                        designModalFull.show();
+                    }
+                });
             });
         });
     </script>
