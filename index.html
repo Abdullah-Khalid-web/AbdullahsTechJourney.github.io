@@ -1,300 +1,967 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta property="og:title" content="Abdullah's Tech Journey">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="img3.png">
-    <meta property="og:url" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/">
-    <meta property="og:description" content="Software Engineer Portfolio Website ">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Abdullah's Tech Journey">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah's Tech Journey</title>
-    <link rel="shortcut icon" href="img2.png" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Abdullah Khalid | Software Engineer & Graphic Designer</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Abdullah Khalid - Software Engineer & Graphic Designer">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/img3.png">
+    <meta property="og:url" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/">
+    <meta property="og:description" content="Software Engineer & Graphic Designer Portfolio showcasing web development, design projects, and technical expertise">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Abdullah Khalid Portfolio">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --secondary: #4a44c6;
+            --dark: #2d2b55;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .typed-cursor {
+            color: var(--primary);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .skill-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .project-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+        
+        .project-card .card-body {
+            padding: 25px;
+        }
+        
+        .certificate-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .certificate-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.1);
+        }
+        
+        .certificate-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h5 {
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .experience-badge {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+        
+        .tech-tag {
+            background: rgba(108, 99, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="left">
-                <!-- <img src="img3.png" alt=""> -->
-                 <a href="index.html">
-                     Abdullah's Portfolio
-                 </a>
-            </div>
-            <div class="right">
-                <ul>
-                    <li></li>
-                    <li><a href="index.html#About">About</a></li>
-                    <li><a href="index.html#skills">Skills</a></li>
-                    <li><a href="index.html#Projects">Projects</a></li>
-                    <li><a href="certification.html">Certificate</a></li>
-                    <li><a href="index.html#Contact-Me">Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-
-
-
-
-
-
-    <main>
-
-        <section id="Home" class="firstsection">
-            <div class="rightsection">
-                <img src="img12.png" alt="" class="img1">
-            </div>
-            <div class="leftsection">
-                Hi, My name is <span class="purple">Abdullah</span>
-                <div> and I am a Passionate</div>
-                <span id="element"></span>
-                <div class="buttons">
-                    <a href="Abdullah Khalid Software engineer Portfolio.jpg"
-                        download="Abdullah Khalid Software engineer Portfolio.jpg"><button class="btn">Download
-                            Resume</button></a>
-                    <a href="https://github.com/Abdullah-Khalid-web"><button class="btn">Visit Github<img src="git.png"
-                                alt=""></button></a>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
-        <hr>
-        <section id="About" class="fourthsection">
-            <h1 class="head-blue">About ME</h1>
-            <h1><span class="blue">Greetings!</span> I'm Abdullah Khalid</h1>
-            <p>I am a passionate Software Engineer based in Quetta, Pakistan.</p>
-            <p>I'm currently pursuing my studies in Software Engineering at BUITEMS.</p>
-            <br>
-            <h1 class="head-blue">Experience</h1>
-            <p>I don't have much job experience yet, but I'm really excited about technology and being creative. It
-                keeps me motivated to learn and grow.</p>
-            <h2>President at BUITEMS developers Club</h2>
-            <p>I am currently serving as the President of the BUITEMS Developers Club, where I lead a passionate team of developers and tech enthusiasts. My role involves organizing events, workshops, and hackathons aimed at enhancing the technical skills of students. With a focus on innovation and community building, I strive to create opportunities for knowledge sharing and collaboration within the developer community at BUITEMS.</p>
-            <br>
-            <h2>My Focus Areas:</h2>
-            <ul>
-                <li>Full Stack Web Development</li>
-                <li>Graphic Designing</li>
-                <li>Cybersecurity</li>
-            </ul>
-            <br>
-            <h2>Contact Details:</h2>
-            <p>Email: <a href="mailto:abdullahkhalid8835@gmail.com">abdullahkhalid8835@gmail.com</a> </p>
-            <p>Phone: <a href="https://wa.me/+923302808835" target="_blank">+92 330 2808835</a> </p>
-        </section>
-        <hr>
-
-
-
-
-        <section id="skills" class="skills-section">
-            <h1 class="head-blue">Skills & Expertise</h1>
-            <span class="text-white">What skills I have done so far</span><br><br>
-            <div class="skill-category">
-                <h2 class="category-title"><span class="highlight">Web Development</span></h2>
-                <ul class="skill-list">
-                    <li>HTML<img src="html.png" alt=""></li>
-                    <li>CSS <img src="css.png" alt=""></li>
-                    <li>JavaScript <img src="js.png" alt=""></li>
-                    <li>PHP <img src="php.png" alt=""></li>
-                    <li>MySQL <img src="sql.png" alt=""></li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h2 class="category-title"><span class="highlight">Programming Languages</span></h2>
-                <ul class="skill-list">
-                    <li>Java <img src="java.png" alt=""></li>
-                    <li>Python <img src="python.png" alt=""></li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h2 class="category-title"><span class="highlight">Tools</span></h2>
-                <ul class="skill-list">
-                    <li>GitHub <img src="bash.png" alt=""></li>
-                </ul>
-            </div>
-
-            <div class="skill-category">
-                <h2 class="category-title"><span class="highlight">Graphic Designing</span></h2>
-                <ul class="skill-list">
-                    <li>Adobe Illustrator <img src="ill.png" alt=""></li>
-                    <li>Adobe Photoshop <img src="ps.png" alt=""></li>
-                    <li>Figma <img src="figma.png" alt=""></li>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code me-2"></i>Abdullah Khalid
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#certificates">Certificates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <hr>
-
-
-
-
-
-
-        <section id="Projects" class="thirdsection">
-            <h1 class="head-blue">My Projects</h1>
-            <span class="text-white">What Projects I have done so far</span><br><br>
-            <div class="project">
-        
-                <div class="project-item">
-                    <img src="project_img/provincial assembly.png" alt="">
-                    <h2 class="text-pri">Provincial Assembly Website</h2>
-                    <a class="text-white" href="https://abdullah-khalid-web.github.io/PROVINCIAL-ASSEMBLY-OF-BALOCHISTAN/">Provincial Assembly of Balochistan Website</a>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Hi, I'm <span class="text-warning">Abdullah Khalid</span></h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typed-text"></span>
+                    </h2>
+                    <p class="lead mb-4">Software Engineer & Graphic Designer passionate about creating beautiful, functional applications and designs that solve real-world problems.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-paper-plane me-2"></i>Get In Touch
+                        </a>
+                        <a href="Abdullah Khalid CV.pdf" download class="btn btn-outline-primary">
+                            <i class="fas fa-download me-2"></i>Download Resume
+                        </a>
+                        <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="btn btn-outline-dark">
+                            <i class="fab fa-github me-2"></i>View GitHub
+                        </a>
+                    </div>
                 </div>
-                <div class="project-item">
-                    <img src="project_img/todoapp.png" alt="">
-                    <h2 class="text-pri">To-Do App</h2>
-                    <a class="text-white" href="https://github.com/Abdullah-Khalid-web/To-Do-app.git">To-Do App</a>
+                <div class="col-lg-6 text-center">
+                    <img src="img12.png" alt="Abdullah Khalid" class="profile-img mt-5 mt-lg-0">
                 </div>
-                <div class="project-item">
-                    <img src="project_img/snake.png" alt="">
-                    <h2 class="text-pri">Snake and Ladder Game</h2>
-                    <a class="text-white" href="https://github.com/Abdullah-Khalid-web/Snack-and-Ledder-Game.git">Snake and Ladder Game</a>
-                </div>
-                <div class="project-item">
-                    <img src="123.jpg" alt="">
-                    <h2 class="text-pri">PakPet Website</h2>
-                    <a class="text-white" href="https://github.com/Abdullah-Khalid-web/pakpet.git">PakPet Website (Not Hosted)</a>
-                </div>
-                <div class="project-item">
-                    <img src="123.jpg" alt="">
-                    <h2 class="text-pri">Crafty Crust</h2>
-                    <a class="text-white" href="https://github.com/Abdullah-Khalid-web/crafty.git">Crafty Crust (Not Hosted)</a>
-                </div>
-                <div class="project-item">
-                    <img src="project_img/next.png" alt="">
-                    <h2 class="text-pri">NextGen Gamers</h2>
-                    <a class="text-white" href="https://abdullah-khalid-web.github.io/NextGen-Gamers/index.html">Website for the that shows the current event, list of schedules of Matcher=s and much more</a>
-                </div>
-                <div class="project-item">
-                    <img src="123.jpg" alt="">
-                    <h2 class="text-pri">Streamlit</h2>
-                    <a class="text-white" href="https://github.com/Abdullah-Khalid-web/Data-Analysis.git">Data Analysis </a>
-                </div>
-        
-            </div>
-        </section>
-        
-
-        <hr><!-- Certificate -->
-        <section id="certificates" class="certificates-section">
-            <h1 class="head-blue">My Certificates</h1>
-            <span class="text-white">What Certificate I have done so far</span><br><br>
-            <a href="certification.html">View here Certificate</a>
-        </section>
-        
-
-        <hr>
-
-        <section id="Contact-Me">
-            <h2 class="head-blue">Contact Details</h2>
-            <div class="contact">
-                <img src="ins.png" class="info-image" alt=""><a
-                    href="https://www.instagram.com/chabdullahkhalid.8835/">chabdullahkhalid.8835</a><br>
-                <img src="face.png" class="info-image" alt=""><a
-                    href="https://www.facebook.com/chabdullah.khalid.7127">Ch Abdullah Khalid</a><br>
-                <img src="wats.png" class="info-image" alt=""><a href="https://wa.me/+923302808835" target="_blank">+92
-                    330 2808835</a><br>
-                <img src="mail.png" class="info-image" alt=""><a
-                    href="mailto:abdullahkhalid8835@gmail.com">abdullahkhalid8835@gmail.com</a><br>
-                    <img src="in.png" class="info-image" alt="LinkedIn Icon">
-                    <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a">Abdullah Khalid</a><br>
-                </ul>
-            </div>
-            </div>
-
-        </section>
-
-
-
-
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-    <footer>
-        <div id="Contact-Me" class="footer">
-            <div class="footer-first">
-                <h3>Abdullah Khalid Developer's Portfolio</h3>
-            </div>
-            <div class="footer-second">
-                <ul>
-                    <li class="footertags">Full Stack Development</li>
-                    <li class="footertags">Java / C++</li>
-                    <li class="footertags">Github</li>
-                    <li class="footertags">Wordpress</li>
-                </ul>
-            </div>
-            <div class="footer-third">
-                <ul>
-                    <li class="footertags">Graphic Designing</li>
-                    <li class="footertags">Wed Designing</li>
-                    <li class="footertags">Poster Designing</li>
-                    <li class="footertags">Logo Designing</li>
-                </ul>
-            </div>
-            <div class="footer-fourth">
-                <ul>
-                    <li><img src="ins.png" class="info-image" alt=""><a
-                            href="https://www.instagram.com/chabdullahkhalid.8835/">chabdullahkhalid.8835</a></li>
-                    <li><img src="face.png" class="info-image" alt=""><a
-                            href="https://www.facebook.com/chabdullah.khalid.7127">Ch Abdullah Khalid</a></li>
-                    <li><img src="wats.png" class="info-image" alt=""><a href="https://wa.me/+923302808835"
-                            target="_blank">+92 330 2808835</a></li>
-                    <li><img src="mail.png" class="info-image" alt=""><a
-                            href="mailto:abdullahkhalid8835@gmail.com">abdullahkhalid8835@gmail.com</a></li>
-                </ul>
             </div>
         </div>
-        <div class="text-rights">
-            Copyright &#169;abdullahstechjourney.com | All rights reserved
+    </section>
+
+    <!-- About Section -->
+<section id="about" class="section-padding">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <h3 class="mb-4">Software Engineer & Graphic Designer</h3>
+                <p class="mb-4">I'm a passionate Software Engineering student at BUITEMS with a keen interest in full-stack web development, cybersecurity, and graphic design. Based in Quetta, Pakistan, I'm constantly learning and experimenting with new technologies to enhance my skills.</p>
+                
+                <div class="experience-badge">Current Role</div>
+                <h4>Junior Software Developer Intern at BRSP</h4>
+                <p>Working as a Junior Software Developer Intern at Balochistan Rural Support Program (BRSP), contributing to software solutions that support rural development initiatives and community empowerment projects across Balochistan.</p>
+                
+                <h4 class="mt-4">Focus Areas:</h4>
+                <div class="tech-stack">
+                    <span class="tech-tag">Full Stack Web Development</span>
+                    <span class="tech-tag">Graphic Design</span>
+                    <span class="tech-tag">UI/UX Design</span>
+                    <span class="tech-tag">Cybersecurity</span>
+                    <span class="tech-tag">Enterprise Software</span>
+                    <span class="tech-tag">Community Development Tech</span>
+                </div>
+                
+                <div class="mt-4">
+                    <a href="#contact" class="btn btn-primary me-2">
+                        <i class="fas fa-paper-plane me-1"></i> Contact Me
+                    </a>
+                    <a href="#projects" class="btn btn-outline-primary">
+                        <i class="fas fa-code me-1"></i> View Projects
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        
+                        <div class="timeline-content">
+                            <h5>Junior Software Developer Intern</h5>
+                            <p class="text-muted">Balochistan Rural Support Program (BRSP) | Nov 2025 - Present</p>
+                            <p>Developing software solutions for rural development initiatives, contributing to projects that empower local communities through technology.</p>
+                            <div class="tech-tag-list">
+                                <span class="tech-tag-sm">Enterprise Software</span>
+                                <span class="tech-tag-sm">Web Development</span>
+                                <span class="tech-tag-sm">Database Management</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h5>President - BUITEMS Developers Club</h5>
+                            <p class="text-muted">2023 - Present</p>
+                            <p>Leading a team of 50+ developers, organizing technical workshops, hackathons, and community events to foster innovation and skill development.</p>
+                            <div class="tech-tag-list">
+                                <span class="tech-tag-sm">Leadership</span>
+                                <span class="tech-tag-sm">Event Management</span>
+                                <span class="tech-tag-sm">Community Building</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h5>Freelance Graphic Designer</h5>
+                            <p class="text-muted">2023 - Present</p>
+                            <p>Creating visual identities, marketing materials, and digital designs for clients across various industries using Adobe Creative Suite and Figma.</p>
+                            <div class="tech-tag-list">
+                                <span class="tech-tag-sm">Adobe Illustrator</span>
+                                <span class="tech-tag-sm">Photoshop</span>
+                                <span class="tech-tag-sm">Figma</span>
+                                <span class="tech-tag-sm">Brand Identity</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h5>Software Engineering Student</h5>
+                            <p class="text-muted">BUITEMS | 2022 - Present</p>
+                            <p>Pursuing Bachelor's degree with focus on web technologies, software architecture, cybersecurity, and software development methodologies.</p>
+                            <div class="tech-tag-list">
+                                <span class="tech-tag-sm">Academic Excellence</span>
+                                <span class="tech-tag-sm">Research</span>
+                                <span class="tech-tag-sm">Technical Skills</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Skills & Expertise Summary -->
+        <div class="row mt-5 pt-5">
+            <div class="col-lg-12">
+                <h3 class="text-center mb-4">Professional Expertise</h3>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="expertise-card text-center p-4">
+                            <div class="expertise-icon mb-3">
+                                <i class="fas fa-code fa-2x text-primary"></i>
+                            </div>
+                            <h5>Software Development</h5>
+                            <p class="text-muted">Full-stack development with modern technologies, creating scalable and efficient software solutions.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="expertise-card text-center p-4">
+                            <div class="expertise-icon mb-3">
+                                <i class="fas fa-paint-brush fa-2x text-primary"></i>
+                            </div>
+                            <h5>Graphic Design</h5>
+                            <p class="text-muted">Creating compelling visual designs that communicate brand identity and enhance user experience.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="expertise-card text-center p-4">
+                            <div class="expertise-icon mb-3">
+                                <i class="fas fa-handshake fa-2x text-primary"></i>
+                            </div>
+                            <h5>Community Leadership</h5>
+                            <p class="text-muted">Leading technical communities and initiatives that promote learning and innovation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="row">
+                <!-- Web Development -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4 class="skill-name">Web Development</h4>
+                        <p>Frontend & Backend Development</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">Laravel</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4 class="skill-name">Databases</h4>
+                        <p>Database Design & Management</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Programming -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 class="skill-name">Programming</h4>
+                        <p>Languages & Frameworks</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">C++</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Design Tools -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4 class="skill-name">Design Tools</h4>
+                        <p>Graphic & UI/UX Design</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">Adobe Photoshop</span>
+                            <span class="tech-tag">Adobe Illustrator</span>
+                            <span class="tech-tag">Figma</span>
+                            <span class="tech-tag">Canva</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- DevOps & Tools -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4 class="skill-name">DevOps & Tools</h4>
+                        <p>Development Tools & Version Control</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">GitHub</span>
+                            <span class="tech-tag">VS Code</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cybersecurity -->
+                <div class="col-md-4 mb-4">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="skill-name">Cybersecurity</h4>
+                        <p>Security Principles & Practices</p>
+                        <div class="tech-stack justify-content-center">
+                            <span class="tech-tag">Ethical Hacking</span>
+                            <span class="tech-tag">Network Security</span>
+                            <span class="tech-tag">Security Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="row">
+                <!-- Provincial Assembly Website -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="project_img/provincial assembly.png" class="card-img-top" alt="Provincial Assembly Website">
+                        <div class="card-body">
+                            <h5 class="card-title">Provincial Assembly Website</h5>
+                            <p class="card-text">Official website for Provincial Assembly of Balochistan with information portal and administrative features.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="https://abdullah-khalid-web.github.io/PROVINCIAL-ASSEMBLY-OF-BALOCHISTAN/" target="_blank" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NextGen Gamers -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="project_img/next.png" class="card-img-top" alt="NextGen Gamers">
+                        <div class="card-body">
+                            <h5 class="card-title">NextGen Gamers</h5>
+                            <p class="card-text">Gaming community platform featuring tournaments, schedules, and event management.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                            </div>
+                            <a href="https://abdullah-khalid-web.github.io/NextGen-Gamers/index.html" target="_blank" class="btn btn-outline-primary btn-sm">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PakPet Website -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="PakPet Website">
+                        <div class="card-body">
+                            <h5 class="card-title">PakPet Website</h5>
+                            <p class="card-text">E-commerce platform for pet products with user authentication and payment integration.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <a href="https://github.com/Abdullah-Khalid-web/pakpet.git" target="_blank" class="btn btn-outline-primary btn-sm">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- To-Do App -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="project_img/todoapp.png" class="card-img-top" alt="To-Do App">
+                        <div class="card-body">
+                            <h5 class="card-title">To-Do Application</h5>
+                            <p class="card-text">Task management application with CRUD operations and local storage.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                            </div>
+                            <a href="https://github.com/Abdullah-Khalid-web/To-Do-app.git" target="_blank" class="btn btn-outline-primary btn-sm">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Snake and Ladder Game -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="project_img/snake.png" class="card-img-top" alt="Snake and Ladder Game">
+                        <div class="card-body">
+                            <h5 class="card-title">Snake and Ladder Game</h5>
+                            <p class="card-text">Classic board game implementation with multiplayer functionality.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Swing</span>
+                            </div>
+                            <a href="https://github.com/Abdullah-Khalid-web/Snack-and-Ledder-Game.git" target="_blank" class="btn btn-outline-primary btn-sm">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Data Analysis Dashboard -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Data Analysis Dashboard">
+                        <div class="card-body">
+                            <h5 class="card-title">Data Analysis Dashboard</h5>
+                            <p class="card-text">Interactive data visualization dashboard using Streamlit and Python.</p>
+                            <div class="tech-stack mb-3">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Streamlit</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Plotly</span>
+                            </div>
+                            <a href="https://github.com/Abdullah-Khalid-web/Data-Analysis.git" target="_blank" class="btn btn-outline-primary btn-sm">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Full Stack Web Development</h4>
+                        <p class="text-muted">Coursera | 2023-25</p>
+                        <p>Comprehensive certification covering frontend and backend development technologies.</p>
+                        <a href="certification.html" class="btn btn-outline-primary btn-sm mt-3">View Certificate</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Cybersecurity Fundamentals</h4>
+                        <p class="text-muted">Coursera | 2023-25</p>
+                        <p>Fundamental principles of cybersecurity, network security, and threat analysis.</p>
+                        <a href="certification.html" class="btn btn-outline-primary btn-sm mt-3">View Certificate</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4>Graphic Design Specialization</h4>
+                        <p class="text-muted">DigiSkills | 2023</p>
+                        <p>Professional graphic design training including Adobe Creative Suite mastery.</p>
+                        <a href="certification.html" class="btn btn-outline-primary btn-sm mt-3">View Certificate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="certification.html" class="btn btn-primary">
+                    <i class="fas fa-certificate me-2"></i>View All Certifications
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h5>Email</h5>
+                                    <a href="mailto:abdullahkhalid8835@gmail.com">abdullahkhalid8835@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h5>Phone</h5>
+                                    <a href="https://wa.me/+923302808835" target="_blank">+92 330 2808835</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div>
+                                    <h5>LinkedIn</h5>
+                                    <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank">Abdullah Khalid</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h5>GitHub</h5>
+                                    <a href="https://github.com/Abdullah-Khalid-web" target="_blank">Abdullah-Khalid-web</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <h4 class="mb-4">Let's Work Together!</h4>
+                        <p class="mb-4">I'm open to freelance opportunities, collaborations, and interesting projects.</p>
+                        <a href="mailto:abdullahkhalid8835@gmail.com" class="btn btn-primary btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5>Abdullah Khalid</h5>
+                    <p>Software Engineer & Graphic Designer passionate about creating innovative solutions and beautiful designs.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="#projects">Web Development</a></li>
+                        <li><a href="#projects">Graphic Design</a></li>
+                        <li><a href="#projects">UI/UX Design</a></li>
+                        <li><a href="#projects">Software Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-4">
+                    <h5>Connect With Me</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/chabdullah.khalid.7127" target="_blank" class="btn btn-outline-light btn-sm">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Abdullah Khalid. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-
-
-
-
-
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Typed.js -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    
+    <script>
+        // Initialize Typed.js
+        document.addEventListener('DOMContentLoaded', function() {
+            var typed = new Typed('#typed-text', {
+                strings: ['Software Engineer.', 'Full Stack Developer.', 'Graphic Designer.', 'UI/UX Designer.', 'Cybersecurity Analyst.'],
+                typeSpeed: 70,
+                backSpeed: 50,
+                loop: true
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Navbar background on scroll
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if(window.scrollY > 100) {
+                    navbar.classList.add('navbar-scrolled');
+                } else {
+                    navbar.classList.remove('navbar-scrolled');
+                }
+            });
+        });
+    </script>
 </body>
-
-<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-<script>
-    var typed = new Typed('#element', {
-        strings: ['Coder.', 'Graphic Designer.','Cyber Security Analyist', 'Full Stack Developer.', 'Software Engineer.'],
-        typeSpeed: 70,
-    });
-</script>
-
-
 </html>
