@@ -1,833 +1,1815 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications | Abdullah Khalid</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Certifications — Abdullah Khalid">
+    <meta property="og:description"
+        content="Verified certifications in Web Development, Cybersecurity, AI, and Graphic Design">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-            --primary: #6c63ff;
-            --secondary: #4a44c6;
-            --dark: #2d2b55;
-            --light: #f8f9fa;
-            --gray: #6c757d;
+            --bg: #0a0a0f;
+            --bg-2: #0f0f18;
+            --card: #13131f;
+            --card-2: #1a1a2e;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(139, 92, 246, 0.3);
+            --text: #f1f0ff;
+            --text-dim: #9494b8;
+            --accent: #8b5cf6;
+            --accent-2: #6366f1;
+            --accent-3: #d946ef;
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
+            font-family: 'Manrope', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
             line-height: 1.6;
-            background-color: #f9f9f9;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+
+        /* ============ TYPOGRAPHY ============ */
+        .font-display {
+            font-family: 'Cabinet Grotesk', 'Manrope', sans-serif;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
-        
-        .navbar-brand {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Cabinet Grotesk', 'Manrope', sans-serif;
             font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary) !important;
+            letter-spacing: -0.02em;
         }
-        
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 100px 0 60px;
+
+        /* ============ ANIMATED BACKGROUND ============ */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
         }
-        
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--dark);
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(120px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.35;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #8b5cf6, transparent 70%);
+            top: -200px;
+            left: -100px;
+        }
+
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #6366f1, transparent 70%);
+            top: 40%;
+            right: -150px;
+            animation-delay: -7s;
+        }
+
+        .orb-3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, #d946ef, transparent 70%);
+            bottom: -200px;
+            left: 30%;
+            animation-delay: -14s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(40px, -30px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-30px, 30px) scale(0.95);
+            }
+        }
+
+        /* ============ NAVBAR ============ */
+        .navbar-custom {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar-custom.scrolled {
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border);
+            padding: 0.7rem 0;
+        }
+
+        .nav-link-custom {
+            color: var(--text-dim);
+            font-weight: 500;
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.25s;
+            text-decoration: none;
             position: relative;
         }
-        
-        .section-title:after {
+
+        .nav-link-custom:hover {
+            color: var(--text);
+        }
+
+        .nav-link-custom::before {
             content: '';
             position: absolute;
-            width: 80px;
-            height: 4px;
-            background: var(--primary);
-            bottom: -10px;
+            bottom: 4px;
             left: 50%;
             transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent);
             border-radius: 2px;
+            transition: width 0.3s;
         }
-        
-        .section-padding {
-            padding: 80px 0;
+
+        .nav-link-custom:hover::before {
+            width: 20px;
         }
-        
-        .certificate-card {
-            background: white;
-            border-radius: 15px;
+
+        .nav-link-custom.active {
+            color: var(--text);
+        }
+
+        .nav-link-custom.active::before {
+            width: 20px;
+        }
+
+        /* ============ CARDS ============ */
+        .card-modern {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-            border: 1px solid #eee;
         }
-        
-        .certificate-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary);
+
+        .card-modern::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.06), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            pointer-events: none;
         }
-        
-        .certificate-preview {
+
+        .card-modern:hover::before {
+            opacity: 1;
+        }
+
+        .card-modern:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* ============ BUTTONS ============ */
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px -10px rgba(139, 92, 246, 0.6);
+            color: white;
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text);
+            padding: 0.85rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(139, 92, 246, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .btn-sm-primary {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .btn-sm-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px -8px rgba(139, 92, 246, 0.6);
+            color: white;
+        }
+
+        .btn-sm-ghost {
+            background: transparent;
+            color: var(--text-dim);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.25s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .btn-sm-ghost:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* ============ TAGS ============ */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.4rem 0.85rem;
+            background: rgba(139, 92, 246, 0.08);
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            transition: all 0.25s;
+        }
+
+        .tag:hover {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: var(--accent);
+            color: #e9d5ff;
+            transform: translateY(-1px);
+        }
+
+        /* ============ GRADIENT TEXT ============ */
+        .gradient-text {
+            background: linear-gradient(135deg, #a78bfa 0%, #818cf8 40%, #e879f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============ SECTION LABELS ============ */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 24px;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        /* ============ FILTER BUTTONS ============ */
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text-dim);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #8b5cf6, #6366f1);
+            border-color: transparent;
+            color: white;
+            box-shadow: 0 8px 20px -8px rgba(139, 92, 246, 0.6);
+        }
+
+        /* ============ PDF PREVIEW ============ */
+        .pdf-preview {
             height: 220px;
+            background: #0d0d15;
+            border-bottom: 1px solid var(--border);
+            position: relative;
             overflow: hidden;
-            background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
-        .certificate-preview iframe {
+
+        .pdf-preview iframe {
             width: 100%;
             height: 100%;
             border: none;
+            opacity: 0.85;
+            pointer-events: none;
         }
-        
-        .certificate-preview .pdf-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--gray);
+
+        .pdf-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13, 13, 21, 0.9), transparent 60%);
+            pointer-events: none;
         }
-        
-        .certificate-preview .pdf-placeholder i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        .certificate-content {
-            padding: 25px;
-        }
-        
-        .certificate-title {
-            font-size: 1.2rem;
+
+        .pdf-icon-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(19, 19, 31, 0.9);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.35rem 0.7rem;
+            font-size: 0.7rem;
             font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .certificate-issuer {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 5px;
+            color: #a78bfa;
             display: flex;
             align-items: center;
+            gap: 0.35rem;
         }
-        
-        .certificate-issuer i {
-            margin-right: 8px;
+
+        /* ============ SCROLLBAR ============ */
+        ::-webkit-scrollbar {
+            width: 10px;
         }
-        
-        .certificate-date {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
         }
-        
-        .certificate-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: rgba(108, 99, 255, 0.1);
-            color: var(--primary);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            margin-bottom: 15px;
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(var(--accent), var(--accent-2));
+            border-radius: 10px;
+            border: 2px solid var(--bg);
         }
-        
-        .category-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-3);
         }
-        
-        .category-btn {
-            padding: 8px 20px;
-            border: 2px solid var(--primary);
-            background: white;
-            color: var(--primary);
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            cursor: pointer;
+
+        /* ============ ANIMATIONS ============ */
+        .pulse-glow {
+            animation: pulse-glow 3s ease-in-out infinite;
         }
-        
-        .category-btn:hover,
-        .category-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .back-to-home {
-            text-align: center;
-            margin-top: 50px;
-        }
-        
-        .footer {
-            background: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-            margin-top: 80px;
-        }
-        
-        .footer h5 {
-            font-weight: 600;
-            margin-bottom: 25px;
-            color: white;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        
-        .copyright {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            margin-top: 40px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .nav-link {
-            color: #333 !important;
-            font-weight: 500;
-        }
-        
-        .nav-link:hover {
-            color: var(--primary) !important;
-        }
-        
-        .active-nav {
-            color: var(--primary) !important;
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
             }
-            
-            .hero-section {
-                padding: 80px 0 40px;
+
+            50% {
+                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
+            }
+        }
+
+        /* ============ CUSTOM CURSOR ============ */
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s;
+            mix-blend-mode: difference;
+        }
+
+        @media (max-width: 768px) {
+            .orb {
+                opacity: 0.2;
+            }
+
+            .cursor-dot {
+                display: none;
             }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-code me-2"></i>Abdullah Khalid
+
+    <!-- ========== BACKGROUND ========== -->
+    <div class="bg-grid"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar-custom scrolled" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2 group" style="text-decoration:none;">
+                <div class="w-9 h-9 rounded-lg flex items-center justify-center"
+                    style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <span class="font-display text-lg" style="color: var(--text);">
+                Engr.<span style="color: var(--accent);">Abdullah Khalid</span>
+                </span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active-nav" href="certification.html">Certificates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact</a>
-                    </li>
-                </ul>
+
+            <!-- desktop nav -->
+            <div class="hidden md:flex items-center gap-1">
+                <a href="index.html#home" class="nav-link-custom">Home</a>
+                <a href="index.html#about" class="nav-link-custom">About</a>
+                <a href="index.html#skills" class="nav-link-custom">Stack</a>
+                <a href="index.html#projects" class="nav-link-custom">Work</a>
+                <a href="index.html#design" class="nav-link-custom">Design</a>
+                <a href="certification.html" class="nav-link-custom active">Certs</a>
+                <a href="index.html#contact" class="nav-link-custom">Contact</a>
             </div>
+
+            <a href="index.html#contact" class="hidden md:inline-flex btn-primary"
+                style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+                Let's talk
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+
+            <!-- mobile menu button -->
+            <button id="menuBtn" class="md:hidden p-2 rounded-lg"
+                style="background: var(--card); border: 1px solid var(--border);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden px-6 pt-4 pb-6 mt-2"
+            style="background: var(--card); border-top: 1px solid var(--border);">
+            <a href="index.html#home" class="block py-2.5 nav-link-custom">Home</a>
+            <a href="index.html#about" class="block py-2.5 nav-link-custom">About</a>
+            <a href="index.html#skills" class="block py-2.5 nav-link-custom">Stack</a>
+            <a href="index.html#projects" class="block py-2.5 nav-link-custom">Work</a>
+            <a href="index.html#design" class="block py-2.5 nav-link-custom">Design</a>
+            <a href="certification.html" class="block py-2.5 nav-link-custom active">Certs</a>
+            <a href="index.html#contact" class="block py-2.5 nav-link-custom">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="display-4 fw-bold mb-3">My Certifications</h1>
-                    <p class="lead mb-4">Professional credentials and certifications earned through dedicated learning and skill development</p>
-                    <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <span class="badge bg-light text-dark p-2">16+ Certificates</span>
-                        <span class="badge bg-light text-dark p-2">5+ Platforms</span>
-                        <span class="badge bg-light text-dark p-2">3+ Categories</span>
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-16" style="z-index: 1;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
+                    style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);">
+                    <span class="w-2 h-2 rounded-full pulse-glow" style="background: #22c55e;"></span>
+                    <span class="text-xs font-medium" style="color: #c4b5fd;">18+ Certifications Earned</span>
+                </div>
+                <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
+                    Verified <span class="gradient-text">credentials.</span>
+                </h1>
+                <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: var(--text-dim);">
+                    Professional certifications in web development, cybersecurity, AI, cloud computing, and design —
+                    earned through continuous learning.
+                </p>
+
+                <!-- Stats row -->
+                <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-12">
+                    <div>
+                        <div class="font-display text-3xl gradient-text">18+</div>
+                        <div class="text-xs mt-1" style="color: var(--text-dim);">Certificates</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl gradient-text">6+</div>
+                        <div class="text-xs mt-1" style="color: var(--text-dim);">Platforms</div>
+                    </div>
+                    <div>
+                        <div class="font-display text-3xl gradient-text">5+</div>
+                        <div class="text-xs mt-1" style="color: var(--text-dim);">Categories</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certificates Section -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Professional Certifications</h2>
-            
+    <!-- ========== CERTIFICATES SECTION ========== -->
+    <section class="py-16 relative" style="z-index: 1;">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-10">
+                <div class="section-label">01 — Certificates</div>
+                <h2 class="font-display text-4xl md:text-5xl">
+                    Professional <span class="gradient-text">certifications.</span>
+                </h2>
+            </div>
+
             <!-- Filter Buttons -->
-            <div class="category-filter">
-                <button class="category-btn active" data-category="all">All Certificates</button>
-                <button class="category-btn" data-category="cybersecurity">Cybersecurity</button>
-                <button class="category-btn" data-category="webdev">Web Development</button>
-                <button class="category-btn" data-category="design">Graphic Design</button>
-                <button class="category-btn" data-category="other">Other</button>
+            <div class="flex flex-wrap gap-3 mb-10 justify-center">
+                <button class="filter-btn active" data-category="all">All Certificates</button>
+                <button class="filter-btn" data-category="webdev">Web Development</button>
+                <button class="filter-btn" data-category="cybersecurity">Cybersecurity</button>
+                <button class="filter-btn" data-category="cloud">Cloud & AI</button>
+                <button class="filter-btn" data-category="design">Graphic Design</button>
+                <button class="filter-btn" data-category="other">Other</button>
             </div>
-            
-            <div class="row g-4" id="certificates-container">
-                <!-- Certificate 1 - Meta Frontend -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="webdev">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Meta Intro to Front end.pdf" title="Meta Frontend Certificate"></iframe>
+
+            <!-- Certificates Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificatesContainer">
+
+                <!-- ===== IBM Software Engineering ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera IBM Software Engineering.pdf"
+                            title="IBM Software Engineering Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Web Development</span>
-                            <h3 class="certificate-title">Introduction to Front-End Development</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-meta"></i> Meta (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                    <path d="M2 12l10 5 10-5" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Fundamentals of front-end development including HTML, CSS, and JavaScript basics.</p>
-                            <a href="certificates/Coursera Meta Intro to Front end.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">IBM</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Software Engineering</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Software engineering principles, SDLC, agile methodologies, and professional development
+                            practices.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera IBM Software Engineering.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Meta Intro to Front end.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera IBM Software Engineering.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 2 - Meta JavaScript -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="webdev">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Meta Js.pdf" title="Meta JavaScript Certificate"></iframe>
+
+                <!-- ===== IBM Cloud Computing ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cloud">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera IBM Cloud Computing.pdf"
+                            title="IBM Cloud Computing Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Web Development</span>
-                            <h3 class="certificate-title">Programming with JavaScript</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-meta"></i> Meta (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Comprehensive JavaScript programming including ES6+ features, DOM manipulation, and asynchronous programming.</p>
-                            <a href="certificates/Coursera Meta Js.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">IBM</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Cloud Computing</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Cloud computing fundamentals, deployment models, virtualization, and cloud service
+                            architectures.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera IBM Cloud Computing.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Meta Js.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera IBM Cloud Computing.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 3 - Meta Version Control -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="webdev">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Meta Version Control.pdf" title="Meta Version Control Certificate"></iframe>
+
+                <!-- ===== Meta Front-End ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Meta Intro to Front end.pdf"
+                            title="Meta Frontend Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Web Development</span>
-                            <h3 class="certificate-title">Version Control</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-meta"></i> Meta (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6" />
+                                    <polyline points="8 6 2 12 8 18" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Git and GitHub for version control, collaboration, and project management in software development.</p>
-                            <a href="certificates/Coursera Meta Version Control.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Meta</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Introduction to Front-End Development</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Fundamentals of front-end development including HTML, CSS, and JavaScript basics.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Meta Intro to Front end.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Meta Version Control.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Meta Intro to Front end.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 4 - DigiSkills WordPress -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="webdev">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/DigiSkillsDSTP_Word Press.pdf" title="WordPress Certificate"></iframe>
+
+                <!-- ===== Meta JavaScript ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Meta Js.pdf" title="Meta JavaScript Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Web Development</span>
-                            <h3 class="certificate-title">WordPress Development</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-laptop-code"></i> DigiSkills Pakistan
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Complete WordPress development including theme customization, plugin development, and website management.</p>
-                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Meta</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Programming with JavaScript</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Comprehensive JavaScript programming including ES6+ features, DOM manipulation, and async
+                            programming.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Meta Js.pdf" target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Meta Js.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 5 - DigiSkills Graphic Design -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="design">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" title="Graphic Design Certificate"></iframe>
+
+                <!-- ===== Meta Version Control ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Meta Version Control.pdf"
+                            title="Meta Version Control Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Graphic Design</span>
-                            <h3 class="certificate-title">Graphic Designing</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-paint-brush"></i> DigiSkills Pakistan
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <circle cx="18" cy="18" r="3" />
+                                    <circle cx="6" cy="6" r="3" />
+                                    <path d="M6 21V9a9 9 0 009 9" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Professional graphic design skills including Adobe Creative Suite, typography, and visual communication principles.</p>
-                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Meta</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Version Control</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Git and GitHub for version control, collaboration, and project management.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Meta Version Control.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Meta Version Control.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 6 - DigiSkills Freelancing -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="other">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/DigiSkillsDSTP_Freelancing.pdf" title="Freelancing Certificate"></iframe>
+
+                <!-- ===== DigiSkills WordPress ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/DigiSkillsDSTP_Word Press.pdf" title="WordPress Certificate"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Professional Skills</span>
-                            <h3 class="certificate-title">Freelancing</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-briefcase"></i> DigiSkills Pakistan
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M4 4h16v16H4z" />
+                                    <path d="M4 9h16M9 4v16" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Freelance business management, client acquisition, project management, and financial planning for freelancers.</p>
-                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">WordPress Development</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Complete WordPress development including theme customization, plugin development, and site
+                            management.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 7 - Google Cybersecurity Foundations -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Foundations of Cybersecurity.pdf" title="Cybersecurity Foundations Certificate"></iframe>
+
+                <!-- ===== Google Foundations of Cybersecurity ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Foundations of Cybersecurity.pdf"
+                            title="Cybersecurity Foundations"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Foundations of Cybersecurity</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Fundamental cybersecurity concepts, threats, vulnerabilities, and security controls.</p>
-                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Foundations of Cybersecurity</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Fundamental cybersecurity concepts, threats, vulnerabilities, and security controls.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 8 - Google Play It Safe -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" title="Security Risks Certificate"></iframe>
+
+                <!-- ===== Google Play It Safe ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Play It Safe Manage Security Risks.pdf"
+                            title="Security Risks"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Play It Safe: Manage Security Risks</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="12" y1="8" x2="12" y2="12" />
+                                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Risk management frameworks, security controls, and incident response procedures.</p>
-                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Play It Safe: Manage Security Risks</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Risk management frameworks, security controls, and incident response procedures.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf"
+                                target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 9 - Google Assets, Threats, and Vulnerabilities -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" title="Assets, Threats, and Vulnerabilities Certificate"></iframe>
+
+                <!-- ===== Google Assets, Threats ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf"
+                            title="Assets Threats"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Assets, Threats, and Vulnerabilities</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path
+                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Asset identification, threat modeling, and vulnerability assessment techniques.</p>
-                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Assets, Threats & Vulnerabilities</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Asset identification, threat modeling, and vulnerability assessment techniques.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf"
+                                target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 10 - Google Automate with Python -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" title="Automate with Python Certificate"></iframe>
+
+                <!-- ===== Google Automate Python ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf"
+                            title="Automate Python"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Automate Cybersecurity Tasks with Python</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <polyline points="16 18 22 12 16 6" />
+                                    <polyline points="8 6 2 12 8 18" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Python scripting for cybersecurity automation, log analysis, and security tool development.</p>
-                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Automate Cybersecurity with Python</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Python scripting for cybersecurity automation, log analysis, and security tool development.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf"
+                                target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 11 - Google Linux and SQL -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Linux and SQL.pdf" title="Linux and SQL Certificate"></iframe>
+
+                <!-- ===== Google Linux and SQL ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Linux and SQL.pdf" title="Linux and SQL"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Linux and SQL</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Linux command line and SQL for security operations, log analysis, and database security.</p>
-                            <a href="certificates/Coursera Google Linux and SQL.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Linux and SQL</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Linux command line and SQL for security operations, log analysis, and database security.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Linux and SQL.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Linux and SQL.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Linux and SQL.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 12 - Google Networks and Network Security -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Networls and Network Security.pdf" title="Networks and Network Security Certificate"></iframe>
+
+                <!-- ===== Google Networks ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Networls and Network Security.pdf"
+                            title="Networks"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Networks and Network Security</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" y1="12" x2="22" y2="12" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Network protocols, architecture, and security measures including firewalls and intrusion detection systems.</p>
-                            <a href="certificates/Coursera Google Networls and Network Security.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Networks and Network Security</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Network protocols, architecture, and security measures including firewalls and IDS.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Networls and Network Security.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Networls and Network Security.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Networls and Network Security.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 13 - Google Detection and Response -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="cybersecurity">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" title="Detection and Response Certificate"></iframe>
+
+                <!-- ===== Google Detection & Response ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/Coursera Google Sound the Alarm Detection and Response.pdf"
+                            title="Detection Response"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Cybersecurity</span>
-                            <h3 class="certificate-title">Sound the Alarm: Detection and Response</h3>
-                            <div class="certificate-issuer">
-                                <i class="fab fa-google"></i> Google (via Coursera)
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
+                                    stroke-width="2">
+                                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                                    <path d="M13.73 21a2 2 0 01-3.46 0" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Security monitoring, incident detection, and response procedures for cybersecurity incidents.</p>
-                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Google</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Detection and Response</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Security monitoring, incident detection, and response procedures for cyber incidents.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf"
+                                target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" download
+                                class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 14 - Ignite Hackathon -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="other">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" title="Ignite Hackathon Certificate"></iframe>
+
+                <!-- ===== DigiSkills Graphic Design ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="design">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" title="Graphic Design"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Hackathon</span>
-                            <h3 class="certificate-title">Ignite Hackathon Participation</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-trophy"></i> Ignite National Technology Fund
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(217,70,239,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e879f9"
+                                    stroke-width="2">
+                                    <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
+                                    <path d="M2 2l7.586 7.586" />
+                                    <circle cx="11" cy="11" r="2" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: August 2024</p>
-                            <p class="mb-3">Participation in national hackathon event showcasing innovation and technical problem-solving skills.</p>
-                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Graphic Designing</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Professional graphic design including Adobe Creative Suite, typography, and visual
+                            communication.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 15 - BDC TechWeek Volunteer -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="other">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/BDC_TeckWeek_Volunteer.pdf" title="BDC TechWeek Volunteer Certificate"></iframe>
+
+                <!-- ===== DigiSkills Freelancing ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/DigiSkillsDSTP_Freelancing.pdf" title="Freelancing"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Leadership</span>
-                            <h3 class="certificate-title">TechWeek Volunteer</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-users"></i> BUITEMS Developers Club
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                    stroke-width="2">
+                                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                                    <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Volunteer leadership in organizing and managing technical events and workshops.</p>
-                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Freelancing</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Freelance business management, client acquisition, and project management.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" target="_blank"
+                                class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Certificate 16 - BDC TechWeek Participation -->
-                <div class="col-md-6 col-lg-4 certificate-item" data-category="other">
-                    <div class="certificate-card">
-                        <div class="certificate-preview">
-                            <iframe src="certificates/BDC_teckWeek.pdf" title="BDC TechWeek Certificate"></iframe>
+
+                <!-- ===== Ignite Hackathon ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+                    <div class="pdf-preview">
+                        <iframe
+                            src="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
+                            title="Ignite Hackathon"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
                         </div>
-                        <div class="certificate-content">
-                            <span class="certificate-badge">Technical Event</span>
-                            <h3 class="certificate-title">TechWeek Participation</h3>
-                            <div class="certificate-issuer">
-                                <i class="fas fa-calendar-alt"></i> BUITEMS Developers Club
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(139,92,246,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
+                                    stroke-width="2">
+                                    <path d="M6 9H4.5a2.5 2.5 0 010-5H6" />
+                                    <path d="M18 9h1.5a2.5 2.5 0 000-5H18" />
+                                    <path d="M4 22h16" />
+                                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                    <path d="M18 2H6v7a6 6 0 0012 0V2z" />
+                                </svg>
                             </div>
-                            <p class="certificate-date">Issued: 2023</p>
-                            <p class="mb-3">Active participation in week-long technical event featuring workshops, competitions, and networking.</p>
-                            <a href="certificates/BDC_teckWeek.pdf" download class="btn btn-sm btn-outline-primary me-2">
-                                <i class="fas fa-download me-1"></i> Download PDF
+                            <span class="tag" style="font-size:0.65rem;">Hackathon</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">Ignite Hackathon Participation</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">Ignite · Aug 2024</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            National hackathon participation showcasing innovation and technical problem-solving.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
+                                target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
                             </a>
-                            <a href="certificates/BDC_teckWeek.pdf" target="_blank" class="btn btn-sm btn-primary">
-                                <i class="fas fa-eye me-1"></i> View Certificate
+                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
+                                download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
                             </a>
                         </div>
                     </div>
                 </div>
+
+                <!-- ===== BDC TechWeek Volunteer ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/BDC_TeckWeek_Volunteer.pdf" title="TechWeek Volunteer"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                    stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 010 7.75" />
+                                </svg>
+                            </div>
+                            <span class="tag" style="font-size:0.65rem;">Leadership</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">TechWeek Volunteer</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Volunteer leadership in organizing and managing technical events and workshops.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
+                            </a>
+                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== BDC TechWeek Participation ===== -->
+                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+                    <div class="pdf-preview">
+                        <iframe src="certificates/BDC_teckWeek.pdf" title="TechWeek Participation"></iframe>
+                        <div class="pdf-overlay"></div>
+                        <div class="pdf-icon-badge">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                            PDF
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-start justify-between mb-3">
+                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                    stroke-width="2">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="16" y1="2" x2="16" y2="6" />
+                                    <line x1="8" y1="2" x2="8" y2="6" />
+                                    <line x1="3" y1="10" x2="21" y2="10" />
+                                </svg>
+                            </div>
+                            <span class="tag" style="font-size:0.65rem;">Event</span>
+                        </div>
+                        <h3 class="font-display text-lg mb-1">TechWeek Participation</h3>
+                        <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
+                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+                            Active participation in week-long technical event featuring workshops, competitions, and
+                            networking.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <a href="certificates/BDC_teckWeek.pdf" target="_blank" class="btn-sm-primary">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                                View
+                            </a>
+                            <a href="certificates/BDC_teckWeek.pdf" download class="btn-sm-ghost">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                                PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            
-            <div class="back-to-home">
-                <a href="index.html" class="btn btn-primary btn-lg">
-                    <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+
+            <!-- Back to Home -->
+            <div class="text-center mt-16">
+                <a href="index.html" class="btn-ghost">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    Back to Portfolio
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5>Abdullah Khalid</h5>
-                    <p>Software Engineer & Graphic Designer passionate about creating innovative solutions and beautiful designs.</p>
-                </div>
-                <div class="col-lg-2 col-md-6 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#skills">Skills</a></li>
-                        <li><a href="index.html#projects">Projects</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Services</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html#projects">Web Development</a></li>
-                        <li><a href="index.html#projects">Graphic Design</a></li>
-                        <li><a href="index.html#projects">UI/UX Design</a></li>
-                        <li><a href="index.html#projects">Software Solutions</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 mb-4">
-                    <h5>Connect With Me</h5>
-                    <div class="d-flex gap-3">
-                        <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank" class="btn btn-outline-light btn-sm">
-                            <i class="fab fa-linkedin"></i>
+    <!-- ========== FOOTER ========== -->
+    <footer class="pt-16 pb-8 relative mt-16" style="z-index: 1; border-top: 1px solid var(--border);">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-10 mb-12">
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-9 h-9 rounded-lg flex items-center justify-center"
+                            style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white"
+                                stroke-width="2.5">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </div>
+                        <span class="font-display text-lg">abdullah<span style="color: var(--accent);">.k</span></span>
+                    </div>
+                    <p class="text-sm mb-5 max-w-sm" style="color: var(--text-dim);">
+                        Full Stack Developer & AI Integrator. Building intelligent SaaS platforms and beautiful
+                        interfaces.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="https://github.com/Abdullah-Khalid-web" target="_blank"
+                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
+                            style="background: var(--card); border: 1px solid var(--border);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+                            </svg>
                         </a>
-                        <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="btn btn-outline-light btn-sm">
-                            <i class="fab fa-github"></i>
+                        <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank"
+                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
+                            style="background: var(--card); border: 1px solid var(--border);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                stroke-width="2">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
                         </a>
-                        <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank" class="btn btn-outline-light btn-sm">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/chabdullah.khalid.7127" target="_blank" class="btn btn-outline-light btn-sm">
-                            <i class="fab fa-facebook"></i>
+                        <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank"
+                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
+                            style="background: var(--card); border: 1px solid var(--border);">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
                         </a>
                     </div>
                 </div>
+                <div class="md:col-span-3">
+                    <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Navigate
+                    </h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#home" class="text-sm transition-colors"
+                                style="color: var(--text-dim); text-decoration: none;"
+                                onmouseover="this.style.color='var(--accent)'"
+                                onmouseout="this.style.color='var(--text-dim)'">Home</a></li>
+                        <li><a href="index.html#about" class="text-sm transition-colors"
+                                style="color: var(--text-dim); text-decoration: none;"
+                                onmouseover="this.style.color='var(--accent)'"
+                                onmouseout="this.style.color='var(--text-dim)'">About</a></li>
+                        <li><a href="index.html#skills" class="text-sm transition-colors"
+                                style="color: var(--text-dim); text-decoration: none;"
+                                onmouseover="this.style.color='var(--accent)'"
+                                onmouseout="this.style.color='var(--text-dim)'">Stack</a></li>
+                        <li><a href="index.html#projects" class="text-sm transition-colors"
+                                style="color: var(--text-dim); text-decoration: none;"
+                                onmouseover="this.style.color='var(--accent)'"
+                                onmouseout="this.style.color='var(--text-dim)'">Work</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-4">
+                    <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Services
+                    </h4>
+                    <ul class="space-y-2">
+                        <li class="text-sm" style="color: var(--text-dim);">Laravel / Node.js Backend</li>
+                        <li class="text-sm" style="color: var(--text-dim);">Vue.js / React Frontend</li>
+                        <li class="text-sm" style="color: var(--text-dim);">AI & OCR Integration</li>
+                        <li class="text-sm" style="color: var(--text-dim);">SaaS & ERP Architecture</li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2023 Abdullah Khalid. All rights reserved.</p>
+            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3"
+                style="border-top: 1px solid var(--border);">
+                <p class="text-xs" style="color: var(--text-dim);">© 2025 Abdullah Khalid. All rights reserved.</p>
+                <p class="text-xs font-mono" style="color: var(--text-dim);">Built with <span
+                        style="color: var(--accent);">&lt;/&gt;</span> + <span style="color: #ec4899;">♥</span></p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <!-- ========== SCRIPTS ========== -->
     <script>
-        // Filter certificates by category
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.category-btn');
-            const certificateItems = document.querySelectorAll('.certificate-item');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-category');
-                    
-                    // Show/hide certificates based on filter
-                    certificateItems.forEach(item => {
-                        if (filterValue === 'all') {
-                            item.style.display = 'block';
-                        } else {
-                            if (item.getAttribute('data-category') === filterValue) {
-                                item.style.display = 'block';
-                            } else {
-                                item.style.display = 'none';
-                            }
-                        }
-                    });
-                });
+        // ============ CURSOR GLOW ============
+        const cursorDot = document.getElementById('cursorDot');
+        let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        function animateCursor() {
+            dotX += (mouseX - dotX) * 0.15;
+            dotY += (mouseY - dotY) * 0.15;
+            cursorDot.style.left = dotX - 4 + 'px';
+            cursorDot.style.top = dotY - 4 + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        document.querySelectorAll('a, button, .card-modern').forEach(el => {
+            el.addEventListener('mouseenter', () => { cursorDot.style.transform = 'scale(2.5)'; });
+            el.addEventListener('mouseleave', () => { cursorDot.style.transform = 'scale(1)'; });
+        });
+
+        // ============ NAVBAR ============
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 30) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // mobile menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // ============ CARD MOUSE GLOW ============
+        document.querySelectorAll('.card-modern').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
             });
-            
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if(targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+        });
+
+        // ============ FILTER CERTIFICATES (BUG FIX) ============
+        // The previous version used AOS + fadeUp animation on already-hidden elements,
+        // which caused the cards to vanish when scrolling because AOS's `once: true`
+        // had already marked them as animated. Now we simply toggle display without
+        // touching any animation library or opacity state.
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const certItems = document.querySelectorAll('.cert-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function () {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const category = this.getAttribute('data-category');
+
+                certItems.forEach(item => {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
                     }
                 });
-            });
-            
-            // Navbar background on scroll
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if(window.scrollY > 100) {
-                    navbar.classList.add('navbar-scrolled');
-                } else {
-                    navbar.classList.remove('navbar-scrolled');
-                }
             });
         });
     </script>
 </body>
+
 </html>

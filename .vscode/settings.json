@@ -6,5 +6,6 @@
         "leftsection",
         "rightsection",
         "thirdsection"
-    ]
+    ],
+    "livePreview.defaultPreviewPath": "/index.html"
 }
