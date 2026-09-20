@@ -1,1815 +1,1369 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications | Abdullah Khalid</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certifications | Engr. Abdullah Khalid</title>
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Certifications — Abdullah Khalid">
-    <meta property="og:description"
-        content="Verified certifications in Web Development, Cybersecurity, AI, and Graphic Design">
+  <!-- Anti-flash: runs BEFORE CSS so no wrong-theme flash -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&display=swap"
-        rel="stylesheet">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Certifications — Engr. Abdullah Khalid">
+  <meta property="og:description" content="Verified certifications in Web Development, Cybersecurity, AI, Cloud, and Graphic Design">
 
-    <style>
-        :root {
-            --bg: #0a0a0f;
-            --bg-2: #0f0f18;
-            --card: #13131f;
-            --card-2: #1a1a2e;
-            --border: rgba(255, 255, 255, 0.06);
-            --border-hover: rgba(139, 92, 246, 0.3);
-            --text: #f1f0ff;
-            --text-dim: #9494b8;
-            --accent: #8b5cf6;
-            --accent-2: #6366f1;
-            --accent-3: #d946ef;
-        }
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <style>
+    /* =====================================================
+       THEME VARIABLES — DEFAULT = LIGHT
+    ===================================================== */
 
-        html {
-            scroll-behavior: smooth;
-        }
+    /* ---------- LIGHT THEME (DEFAULT) ---------- */
+    :root {
+      --bg: #f7f7fc;
+      --bg-2: #ffffff;
+      --card: #ffffff;
+      --card-2: #f5f3ff;
+      --border: rgba(30,20,70,0.08);
+      --border-hover: rgba(139,92,246,0.4);
+      --text: #1a1533;
+      --text-dim: #6b6890;
+      --accent: #7c3aed;
+      --accent-2: #6366f1;
+      --accent-3: #c026d3;
+      --glow: rgba(139,92,246,0.35);
+      --grid-line: rgba(139,92,246,0.08);
+      --orb-opacity: 0.22;
+      --nav-scrolled: rgba(255,255,255,0.85);
+      --tag-bg: rgba(124,58,237,0.07);
+      --tag-border: rgba(124,58,237,0.18);
+      --tag-text: #6d28d9;
+      --tag-bg-hover: rgba(124,58,237,0.14);
+      --tag-text-hover: #4c1d95;
+      --card-glow: rgba(124,58,237,0.08);
+      --code-bg: #f5f3ff;
+      --code-header: #ede9fe;
+      --shadow-card: 0 20px 40px -20px rgba(124,58,237,0.22);
+      --shadow-btn: 0 15px 30px -10px rgba(124,58,237,0.4);
+      --section-alt: rgba(124,58,237,0.035);
+      --scrollbar-track: #f7f7fc;
+      --pdf-bg: #f5f3ff;
+      --pdf-overlay: rgba(245,243,255,0.6);
+      --pdf-badge-bg: rgba(255,255,255,0.95);
+      --pdf-badge-text: #6d28d9;
+    }
 
-        body {
-            font-family: 'Manrope', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            overflow-x: hidden;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* ---------- DARK THEME ---------- */
+    html.dark {
+      --bg: #0a0a0f;
+      --bg-2: #0f0f18;
+      --card: #13131f;
+      --card-2: #1a1a2e;
+      --border: rgba(255,255,255,0.06);
+      --border-hover: rgba(139,92,246,0.3);
+      --text: #f1f0ff;
+      --text-dim: #9494b8;
+      --accent: #8b5cf6;
+      --accent-2: #6366f1;
+      --accent-3: #d946ef;
+      --glow: rgba(139,92,246,0.5);
+      --grid-line: rgba(139,92,246,0.03);
+      --orb-opacity: 0.35;
+      --nav-scrolled: rgba(10,10,15,0.85);
+      --tag-bg: rgba(139,92,246,0.08);
+      --tag-border: rgba(139,92,246,0.15);
+      --tag-text: #c4b5fd;
+      --tag-bg-hover: rgba(139,92,246,0.15);
+      --tag-text-hover: #e9d5ff;
+      --card-glow: rgba(139,92,246,0.06);
+      --code-bg: #0d0d15;
+      --code-header: #13131f;
+      --shadow-card: 0 20px 40px -20px rgba(139,92,246,0.3);
+      --shadow-btn: 0 15px 30px -10px rgba(139,92,246,0.6);
+      --section-alt: rgba(15,15,24,0.5);
+      --scrollbar-track: #0a0a0f;
+      --pdf-bg: #0d0d15;
+      --pdf-overlay: rgba(13,13,21,0.9);
+      --pdf-badge-bg: rgba(19,19,31,0.9);
+      --pdf-badge-text: #a78bfa;
+    }
 
-        /* ============ TYPOGRAPHY ============ */
-        .font-display {
-            font-family: 'Cabinet Grotesk', 'Manrope', sans-serif;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: 'Cabinet Grotesk', 'Manrope', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
+    /* ============ TYPOGRAPHY ============ */
+    .font-display { font-family: 'Cabinet Grotesk', 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
+    h1, h2, h3, h4, h5 { font-family: 'Cabinet Grotesk', 'Manrope', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
 
-        /* ============ ANIMATED BACKGROUND ============ */
-        .bg-grid {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background-image:
-                linear-gradient(rgba(139, 92, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
-            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
-        }
+    /* ============ ANIMATED BACKGROUND ============ */
+    .bg-grid {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+      transition: background-image 0.5s ease;
+    }
+    .orb {
+      position: fixed; border-radius: 50%; filter: blur(120px); z-index: 0; pointer-events: none;
+      opacity: var(--orb-opacity);
+      animation: float 20s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+    .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #8b5cf6, transparent 70%); top: -200px; left: -100px; }
+    .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #6366f1, transparent 70%); top: 40%; right: -150px; animation-delay: -7s; }
+    .orb-3 { width: 450px; height: 450px; background: radial-gradient(circle, #d946ef, transparent 70%); bottom: -200px; left: 30%; animation-delay: -14s; }
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(40px, -30px) scale(1.1); }
+      66% { transform: translate(-30px, 30px) scale(0.95); }
+    }
 
-        .orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(120px);
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.35;
-            animation: float 20s ease-in-out infinite;
-        }
+    /* ============ NAVBAR ============ */
+    .navbar-custom {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1rem 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .navbar-custom.scrolled {
+      background: var(--nav-scrolled);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 0;
+    }
+    .nav-link-custom {
+      color: var(--text-dim);
+      font-weight: 500;
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.25s;
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-link-custom:hover { color: var(--text); }
+    .nav-link-custom::before {
+      content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 2px; background: var(--accent); border-radius: 2px; transition: width 0.3s;
+    }
+    .nav-link-custom:hover::before { width: 20px; }
+    .nav-link-custom.active { color: var(--text); }
+    .nav-link-custom.active::before { width: 20px; }
 
-        .orb-1 {
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, #8b5cf6, transparent 70%);
-            top: -200px;
-            left: -100px;
-        }
+    /* ============ THEME TOGGLE ============ */
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px var(--glow);
+    }
+    .theme-toggle svg {
+      width: 18px; height: 18px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+      position: absolute;
+    }
+    .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+    .theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    html.dark .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(0.5); }
+    html.dark .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
 
-        .orb-2 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, #6366f1, transparent 70%);
-            top: 40%;
-            right: -150px;
-            animation-delay: -7s;
-        }
+    /* ============ CARDS ============ */
+    .card-modern {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-modern::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-glow), transparent 40%);
+      opacity: 0; transition: opacity 0.4s;
+      pointer-events: none;
+    }
+    .card-modern:hover::before { opacity: 1; }
+    .card-modern:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+    }
 
-        .orb-3 {
-            width: 450px;
-            height: 450px;
-            background: radial-gradient(circle, #d946ef, transparent 70%);
-            bottom: -200px;
-            left: 30%;
-            animation-delay: -14s;
-        }
+    /* ============ BUTTONS ============ */
+    .btn-primary {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-btn);
+      color: white;
+    }
 
-        @keyframes float {
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      padding: 0.85rem 2rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--tag-bg);
+      transform: translateY(-2px);
+    }
 
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
+    .btn-sm-primary {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-sm-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px -8px var(--glow);
+      color: white;
+    }
 
-            33% {
-                transform: translate(40px, -30px) scale(1.1);
-            }
+    .btn-sm-ghost {
+      background: transparent;
+      color: var(--text-dim);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.25s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .btn-sm-ghost:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
 
-            66% {
-                transform: translate(-30px, 30px) scale(0.95);
-            }
-        }
+    /* ============ TAGS ============ */
+    .tag {
+      display: inline-flex; align-items: center;
+      padding: 0.4rem 0.85rem;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      color: var(--tag-text);
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      transition: all 0.25s;
+    }
+    .tag:hover {
+      background: var(--tag-bg-hover);
+      border-color: var(--accent);
+      color: var(--tag-text-hover);
+      transform: translateY(-1px);
+    }
 
-        /* ============ NAVBAR ============ */
-        .navbar-custom {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 100;
-            padding: 1rem 0;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+    /* ============ GRADIENT TEXT ============ */
+    .gradient-text {
+      background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #c026d3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    html.dark .gradient-text {
+      background: linear-gradient(135deg, #a78bfa 0%, #818cf8 40%, #e879f9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
-        .navbar-custom.scrolled {
-            background: rgba(10, 10, 15, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid var(--border);
-            padding: 0.7rem 0;
-        }
+    /* ============ SECTION LABELS ============ */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: ''; width: 24px; height: 1px; background: var(--accent);
+    }
 
-        .nav-link-custom {
-            color: var(--text-dim);
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: all 0.25s;
-            text-decoration: none;
-            position: relative;
-        }
+    /* ============ FILTER BUTTONS ============ */
+    .filter-btn {
+      padding: 0.5rem 1.25rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s;
+      cursor: pointer;
+      font-family: 'Manrope', sans-serif;
+    }
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--tag-bg);
+    }
+    .filter-btn.active {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 8px 20px -8px var(--glow);
+    }
 
-        .nav-link-custom:hover {
-            color: var(--text);
-        }
+    /* ============ PDF PREVIEW ============ */
+    .pdf-preview {
+      height: 220px;
+      background: var(--pdf-bg);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.5s ease;
+    }
+    .pdf-preview iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    .pdf-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, var(--pdf-overlay), transparent 60%);
+      pointer-events: none;
+    }
+    .pdf-icon-badge {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: var(--pdf-badge-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--pdf-badge-text);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
 
-        .nav-link-custom::before {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            border-radius: 2px;
-            transition: width 0.3s;
-        }
+    /* ============ SCROLLBAR ============ */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent), var(--accent-2)); border-radius: 10px; border: 2px solid var(--scrollbar-track); }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-3); }
 
-        .nav-link-custom:hover::before {
-            width: 20px;
-        }
+    /* ============ ANIMATIONS ============ */
+    .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+      50% { box-shadow: 0 0 0 15px rgba(34,197,94,0); }
+    }
 
-        .nav-link-custom.active {
-            color: var(--text);
-        }
+    /* ============ CUSTOM CURSOR ============ */
+    .cursor-dot {
+      width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+      position: fixed; pointer-events: none; z-index: 9999;
+      transition: transform 0.1s;
+    }
+    html.dark .cursor-dot { mix-blend-mode: difference; }
 
-        .nav-link-custom.active::before {
-            width: 20px;
-        }
+    /* smooth theme transition for major surfaces */
+    .card-modern, .btn-ghost, .btn-sm-ghost, .nav-link-custom, .theme-toggle,
+    .filter-btn, .tag, footer, nav, .pdf-preview, .pdf-icon-badge {
+      transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+    }
 
-        /* ============ CARDS ============ */
-        .card-modern {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-modern::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139, 92, 246, 0.06), transparent 40%);
-            opacity: 0;
-            transition: opacity 0.4s;
-            pointer-events: none;
-        }
-
-        .card-modern:hover::before {
-            opacity: 1;
-        }
-
-        .card-modern:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px -20px rgba(139, 92, 246, 0.3);
-        }
-
-        /* ============ BUTTONS ============ */
-        .btn-primary {
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
-            color: white;
-            padding: 0.85rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 15px 30px -10px rgba(139, 92, 246, 0.6);
-            color: white;
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--text);
-            padding: 0.85rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-ghost:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(139, 92, 246, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .btn-sm-primary {
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.25s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .btn-sm-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 8px 20px -8px rgba(139, 92, 246, 0.6);
-            color: white;
-        }
-
-        .btn-sm-ghost {
-            background: transparent;
-            color: var(--text-dim);
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.8rem;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.25s;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        .btn-sm-ghost:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* ============ TAGS ============ */
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.4rem 0.85rem;
-            background: rgba(139, 92, 246, 0.08);
-            border: 1px solid rgba(139, 92, 246, 0.15);
-            color: #c4b5fd;
-            border-radius: 100px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            transition: all 0.25s;
-        }
-
-        .tag:hover {
-            background: rgba(139, 92, 246, 0.15);
-            border-color: var(--accent);
-            color: #e9d5ff;
-            transform: translateY(-1px);
-        }
-
-        /* ============ GRADIENT TEXT ============ */
-        .gradient-text {
-            background: linear-gradient(135deg, #a78bfa 0%, #818cf8 40%, #e879f9 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* ============ SECTION LABELS ============ */
-        .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .section-label::before {
-            content: '';
-            width: 24px;
-            height: 1px;
-            background: var(--accent);
-        }
-
-        /* ============ FILTER BUTTONS ============ */
-        .filter-btn {
-            padding: 0.5rem 1.25rem;
-            background: var(--card);
-            border: 1px solid var(--border);
-            color: var(--text-dim);
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.3s;
-            cursor: pointer;
-            font-family: 'Manrope', sans-serif;
-        }
-
-        .filter-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: rgba(139, 92, 246, 0.05);
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, #8b5cf6, #6366f1);
-            border-color: transparent;
-            color: white;
-            box-shadow: 0 8px 20px -8px rgba(139, 92, 246, 0.6);
-        }
-
-        /* ============ PDF PREVIEW ============ */
-        .pdf-preview {
-            height: 220px;
-            background: #0d0d15;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .pdf-preview iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            opacity: 0.85;
-            pointer-events: none;
-        }
-
-        .pdf-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(13, 13, 21, 0.9), transparent 60%);
-            pointer-events: none;
-        }
-
-        .pdf-icon-badge {
-            position: absolute;
-            bottom: 12px;
-            left: 12px;
-            background: rgba(19, 19, 31, 0.9);
-            backdrop-filter: blur(12px);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 0.35rem 0.7rem;
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #a78bfa;
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-        }
-
-        /* ============ SCROLLBAR ============ */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--accent), var(--accent-2));
-            border-radius: 10px;
-            border: 2px solid var(--bg);
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-3);
-        }
-
-        /* ============ ANIMATIONS ============ */
-        .pulse-glow {
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.4);
-            }
-
-            50% {
-                box-shadow: 0 0 0 15px rgba(139, 92, 246, 0);
-            }
-        }
-
-        /* ============ CUSTOM CURSOR ============ */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s;
-            mix-blend-mode: difference;
-        }
-
-        @media (max-width: 768px) {
-            .orb {
-                opacity: 0.2;
-            }
-
-            .cursor-dot {
-                display: none;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .orb { opacity: 0.18; }
+      .cursor-dot { display: none; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- ========== BACKGROUND ========== -->
-    <div class="bg-grid"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-    <div class="cursor-dot" id="cursorDot"></div>
+  <!-- ========== BACKGROUND ========== -->
+  <div class="bg-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
 
-    <!-- ========== NAVBAR ========== -->
-    <nav class="navbar-custom scrolled" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-2 group" style="text-decoration:none;">
-                <div class="w-9 h-9 rounded-lg flex items-center justify-center"
-                    style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                </div>
-                <span class="font-display text-lg" style="color: var(--text);">
-                Engr.<span style="color: var(--accent);">Abdullah Khalid</span>
-                </span>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar-custom scrolled" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group" style="text-decoration:none;">
+        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <span class="font-display text-lg" style="color: var(--text);">
+          Engr.<span style="color: var(--accent);">Abdullah Khalid</span>
+        </span>
+      </a>
+
+      <!-- desktop nav -->
+      <div class="hidden md:flex items-center gap-1">
+        <a href="index.html#home" class="nav-link-custom">Home</a>
+        <a href="index.html#about" class="nav-link-custom">About</a>
+        <a href="index.html#skills" class="nav-link-custom">Stack</a>
+        <a href="index.html#projects" class="nav-link-custom">Work</a>
+        <a href="index.html#design" class="nav-link-custom">Design</a>
+        <a href="certification.html" class="nav-link-custom active">Certs</a>
+        <a href="index.html#contact" class="nav-link-custom">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- THEME TOGGLE -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <!-- Sun icon (shown in LIGHT mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in DARK mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <a href="index.html#contact" class="hidden md:inline-flex btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+          Let's talk
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- mobile menu button -->
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg" style="background: var(--card); border: 1px solid var(--border); color: var(--text);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-6 pt-4 pb-6 mt-2" style="background: var(--card); border-top: 1px solid var(--border);">
+      <a href="index.html#home" class="block py-2.5 nav-link-custom">Home</a>
+      <a href="index.html#about" class="block py-2.5 nav-link-custom">About</a>
+      <a href="index.html#skills" class="block py-2.5 nav-link-custom">Stack</a>
+      <a href="index.html#projects" class="block py-2.5 nav-link-custom">Work</a>
+      <a href="index.html#design" class="block py-2.5 nav-link-custom">Design</a>
+      <a href="certification.html" class="block py-2.5 nav-link-custom active">Certs</a>
+      <a href="index.html#contact" class="block py-2.5 nav-link-custom">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="relative pt-32 pb-16" style="z-index: 1;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style="background: var(--tag-bg); border: 1px solid var(--tag-border);">
+          <span class="w-2 h-2 rounded-full pulse-glow" style="background: #22c55e;"></span>
+          <span class="text-xs font-medium" style="color: var(--tag-text);">18+ Certifications Earned</span>
+        </div>
+        <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
+          Verified <span class="gradient-text">credentials.</span>
+        </h1>
+        <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: var(--text-dim);">
+          Professional certifications in web development, cybersecurity, AI, cloud computing, and design — earned through continuous learning.
+        </p>
+
+        <!-- Stats row -->
+        <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-12">
+          <div>
+            <div class="font-display text-3xl gradient-text">18+</div>
+            <div class="text-xs mt-1" style="color: var(--text-dim);">Certificates</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl gradient-text">6+</div>
+            <div class="text-xs mt-1" style="color: var(--text-dim);">Platforms</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl gradient-text">5+</div>
+            <div class="text-xs mt-1" style="color: var(--text-dim);">Categories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES SECTION ========== -->
+  <section class="py-16 relative" style="z-index: 1;">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-10">
+        <div class="section-label">01 — Certificates</div>
+        <h2 class="font-display text-4xl md:text-5xl">
+          Professional <span class="gradient-text">certifications.</span>
+        </h2>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-3 mb-10 justify-center">
+        <button class="filter-btn active" data-category="all">All Certificates</button>
+        <button class="filter-btn" data-category="webdev">Web Development</button>
+        <button class="filter-btn" data-category="cybersecurity">Cybersecurity</button>
+        <button class="filter-btn" data-category="cloud">Cloud & AI</button>
+        <button class="filter-btn" data-category="design">Graphic Design</button>
+        <button class="filter-btn" data-category="other">Other</button>
+      </div>
+
+      <!-- Certificates Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificatesContainer">
+
+        <!-- ===== IBM Software Engineering ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera IBM Software Engineering.pdf" title="IBM Software Engineering Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">IBM</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Software Engineering</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Software engineering principles, SDLC, agile methodologies, and professional development practices.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera IBM Software Engineering.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera IBM Software Engineering.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== IBM Cloud Computing ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cloud">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera IBM Cloud Computing.pdf" title="IBM Cloud Computing Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">IBM</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Cloud Computing</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Cloud computing fundamentals, deployment models, virtualization, and cloud service architectures.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera IBM Cloud Computing.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera IBM Cloud Computing.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Meta Front-End ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Meta Intro to Front end.pdf" title="Meta Frontend Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Meta</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Introduction to Front-End Development</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Fundamentals of front-end development including HTML, CSS, and JavaScript basics.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Meta Intro to Front end.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Meta Intro to Front end.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Meta JavaScript ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Meta Js.pdf" title="Meta JavaScript Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Meta</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Programming with JavaScript</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Comprehensive JavaScript programming including ES6+ features, DOM manipulation, and async programming.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Meta Js.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Meta Js.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Meta Version Control ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Meta Version Control.pdf" title="Meta Version Control Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 009 9"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Meta</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Version Control</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Git and GitHub for version control, collaboration, and project management.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Meta Version Control.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Meta Version Control.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== DigiSkills WordPress ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
+          <div class="pdf-preview">
+            <iframe src="certificates/DigiSkillsDSTP_Word Press.pdf" title="WordPress Certificate"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 9h16M9 4v16"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">WordPress Development</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Complete WordPress development including theme customization, plugin development, and site management.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/DigiSkillsDSTP_Word Press.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/DigiSkillsDSTP_Word Press.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Foundations of Cybersecurity ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Foundations of Cybersecurity.pdf" title="Cybersecurity Foundations"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Foundations of Cybersecurity</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Fundamental cybersecurity concepts, threats, vulnerabilities, and security controls.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Play It Safe ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" title="Security Risks"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Play It Safe: Manage Security Risks</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Risk management frameworks, security controls, and incident response procedures.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Assets, Threats ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" title="Assets Threats"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Assets, Threats & Vulnerabilities</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Asset identification, threat modeling, and vulnerability assessment techniques.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Automate Python ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" title="Automate Python"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Automate Cybersecurity with Python</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Python scripting for cybersecurity automation, log analysis, and security tool development.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Linux and SQL ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Linux and SQL.pdf" title="Linux and SQL"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Linux and SQL</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Linux command line and SQL for security operations, log analysis, and database security.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Linux and SQL.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Linux and SQL.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Networks ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Networls and Network Security.pdf" title="Networks"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Networks and Network Security</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Network protocols, architecture, and security measures including firewalls and IDS.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Networls and Network Security.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Networls and Network Security.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Google Detection & Response ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
+          <div class="pdf-preview">
+            <iframe src="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" title="Detection Response"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Google</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Detection and Response</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Security monitoring, incident detection, and response procedures for cyber incidents.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== DigiSkills Graphic Design ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="design">
+          <div class="pdf-preview">
+            <iframe src="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" title="Graphic Design"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Graphic Designing</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Professional graphic design including Adobe Creative Suite, typography, and visual communication.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== DigiSkills Freelancing ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+          <div class="pdf-preview">
+            <iframe src="certificates/DigiSkillsDSTP_Freelancing.pdf" title="Freelancing"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Freelancing</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Freelance business management, client acquisition, and project management.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Ignite Hackathon ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+          <div class="pdf-preview">
+            <iframe src="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" title="Ignite Hackathon"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(251,191,36,0.15);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 010-5H6"/><path d="M18 9h1.5a2.5 2.5 0 000-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0012 0V2z"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Hackathon</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">Ignite Hackathon Participation</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">Ignite · Aug 2024</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              National hackathon participation showcasing innovation and technical problem-solving.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BDC TechWeek Volunteer ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+          <div class="pdf-preview">
+            <iframe src="certificates/BDC_TeckWeek_Volunteer.pdf" title="TechWeek Volunteer"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Leadership</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">TechWeek Volunteer</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Volunteer leadership in organizing and managing technical events and workshops.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/BDC_TeckWeek_Volunteer.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/BDC_TeckWeek_Volunteer.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== BDC TechWeek Participation ===== -->
+        <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
+          <div class="pdf-preview">
+            <iframe src="certificates/BDC_teckWeek.pdf" title="TechWeek Participation"></iframe>
+            <div class="pdf-overlay"></div>
+            <div class="pdf-icon-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              PDF
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <div class="flex items-start justify-between mb-3">
+              <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <span class="tag" style="font-size:0.65rem;">Event</span>
+            </div>
+            <h3 class="font-display text-lg mb-1">TechWeek Participation</h3>
+            <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
+            <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
+              Active participation in week-long technical event featuring workshops, competitions, and networking.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <a href="certificates/BDC_teckWeek.pdf" target="_blank" class="btn-sm-primary">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                View
+              </a>
+              <a href="certificates/BDC_teckWeek.pdf" download class="btn-sm-ghost">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                PDF
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Back to Home -->
+      <div class="text-center mt-16">
+        <a href="index.html" class="btn-ghost">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="pt-16 pb-8 relative mt-16" style="z-index: 1; border-top: 1px solid var(--border);">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-10 mb-12">
+        <div class="md:col-span-5">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <span class="font-display text-lg" style="color: var(--text);">Engr.<span style="color: var(--accent);">Abdullah Khalid</span></span>
+          </div>
+          <p class="text-sm mb-5 max-w-sm" style="color: var(--text-dim);">
+            PEC-Registered Software Engineer & AI Integrator. Building intelligent SaaS platforms and beautiful interfaces.
+          </p>
+          <div class="flex gap-3">
+            <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             </a>
-
-            <!-- desktop nav -->
-            <div class="hidden md:flex items-center gap-1">
-                <a href="index.html#home" class="nav-link-custom">Home</a>
-                <a href="index.html#about" class="nav-link-custom">About</a>
-                <a href="index.html#skills" class="nav-link-custom">Stack</a>
-                <a href="index.html#projects" class="nav-link-custom">Work</a>
-                <a href="index.html#design" class="nav-link-custom">Design</a>
-                <a href="certification.html" class="nav-link-custom active">Certs</a>
-                <a href="index.html#contact" class="nav-link-custom">Contact</a>
-            </div>
-
-            <a href="index.html#contact" class="hidden md:inline-flex btn-primary"
-                style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
-                Let's talk
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
+            <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
-
-            <!-- mobile menu button -->
-            <button id="menuBtn" class="md:hidden p-2 rounded-lg"
-                style="background: var(--card); border: 1px solid var(--border);">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-            </button>
+            <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+          </div>
         </div>
-
-        <!-- mobile menu -->
-        <div id="mobileMenu" class="md:hidden hidden px-6 pt-4 pb-6 mt-2"
-            style="background: var(--card); border-top: 1px solid var(--border);">
-            <a href="index.html#home" class="block py-2.5 nav-link-custom">Home</a>
-            <a href="index.html#about" class="block py-2.5 nav-link-custom">About</a>
-            <a href="index.html#skills" class="block py-2.5 nav-link-custom">Stack</a>
-            <a href="index.html#projects" class="block py-2.5 nav-link-custom">Work</a>
-            <a href="index.html#design" class="block py-2.5 nav-link-custom">Design</a>
-            <a href="certification.html" class="block py-2.5 nav-link-custom active">Certs</a>
-            <a href="index.html#contact" class="block py-2.5 nav-link-custom">Contact</a>
+        <div class="md:col-span-3">
+          <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Navigate</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html#home" class="text-sm transition-colors" style="color: var(--text-dim); text-decoration: none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-dim)'">Home</a></li>
+            <li><a href="index.html#about" class="text-sm transition-colors" style="color: var(--text-dim); text-decoration: none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-dim)'">About</a></li>
+            <li><a href="index.html#skills" class="text-sm transition-colors" style="color: var(--text-dim); text-decoration: none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-dim)'">Stack</a></li>
+            <li><a href="index.html#projects" class="text-sm transition-colors" style="color: var(--text-dim); text-decoration: none;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text-dim)'">Work</a></li>
+          </ul>
         </div>
-    </nav>
-
-    <!-- ========== HERO ========== -->
-    <section class="relative pt-32 pb-16" style="z-index: 1;">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center">
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-                    style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);">
-                    <span class="w-2 h-2 rounded-full pulse-glow" style="background: #22c55e;"></span>
-                    <span class="text-xs font-medium" style="color: #c4b5fd;">18+ Certifications Earned</span>
-                </div>
-                <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
-                    Verified <span class="gradient-text">credentials.</span>
-                </h1>
-                <p class="text-lg mb-10 max-w-2xl mx-auto" style="color: var(--text-dim);">
-                    Professional certifications in web development, cybersecurity, AI, cloud computing, and design —
-                    earned through continuous learning.
-                </p>
-
-                <!-- Stats row -->
-                <div class="grid grid-cols-3 gap-6 max-w-lg mx-auto mb-12">
-                    <div>
-                        <div class="font-display text-3xl gradient-text">18+</div>
-                        <div class="text-xs mt-1" style="color: var(--text-dim);">Certificates</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-3xl gradient-text">6+</div>
-                        <div class="text-xs mt-1" style="color: var(--text-dim);">Platforms</div>
-                    </div>
-                    <div>
-                        <div class="font-display text-3xl gradient-text">5+</div>
-                        <div class="text-xs mt-1" style="color: var(--text-dim);">Categories</div>
-                    </div>
-                </div>
-            </div>
+        <div class="md:col-span-4">
+          <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Services</h4>
+          <ul class="space-y-2">
+            <li class="text-sm" style="color: var(--text-dim);">Laravel / Node.js Backend</li>
+            <li class="text-sm" style="color: var(--text-dim);">Vue.js / React Frontend</li>
+            <li class="text-sm" style="color: var(--text-dim);">AI & OCR Integration</li>
+            <li class="text-sm" style="color: var(--text-dim);">SaaS & ERP Architecture</li>
+          </ul>
         </div>
-    </section>
+      </div>
+      <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3" style="border-top: 1px solid var(--border);">
+        <p class="text-xs" style="color: var(--text-dim);">© 2025 Engr. Abdullah Khalid · PEC-Registered. All rights reserved.</p>
+        <p class="text-xs font-mono" style="color: var(--text-dim);">Built with <span style="color: var(--accent);">&lt;/&gt;</span> + <span style="color: #ec4899;">♥</span></p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- ========== CERTIFICATES SECTION ========== -->
-    <section class="py-16 relative" style="z-index: 1;">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="mb-10">
-                <div class="section-label">01 — Certificates</div>
-                <h2 class="font-display text-4xl md:text-5xl">
-                    Professional <span class="gradient-text">certifications.</span>
-                </h2>
-            </div>
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // ============ THEME TOGGLE (LIGHT DEFAULT) ============
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
 
-            <!-- Filter Buttons -->
-            <div class="flex flex-wrap gap-3 mb-10 justify-center">
-                <button class="filter-btn active" data-category="all">All Certificates</button>
-                <button class="filter-btn" data-category="webdev">Web Development</button>
-                <button class="filter-btn" data-category="cybersecurity">Cybersecurity</button>
-                <button class="filter-btn" data-category="cloud">Cloud & AI</button>
-                <button class="filter-btn" data-category="design">Graphic Design</button>
-                <button class="filter-btn" data-category="other">Other</button>
-            </div>
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
 
-            <!-- Certificates Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="certificatesContainer">
+    // ============ CURSOR GLOW ============
+    const cursorDot = document.getElementById('cursorDot');
+    let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
+    document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    function animateCursor() {
+      dotX += (mouseX - dotX) * 0.15;
+      dotY += (mouseY - dotY) * 0.15;
+      cursorDot.style.left = dotX - 4 + 'px';
+      cursorDot.style.top = dotY - 4 + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
 
-                <!-- ===== IBM Software Engineering ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera IBM Software Engineering.pdf"
-                            title="IBM Software Engineering Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                    <path d="M2 17l10 5 10-5" />
-                                    <path d="M2 12l10 5 10-5" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">IBM</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Software Engineering</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Software engineering principles, SDLC, agile methodologies, and professional development
-                            practices.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera IBM Software Engineering.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera IBM Software Engineering.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    document.querySelectorAll('a, button, .card-modern').forEach(el => {
+      el.addEventListener('mouseenter', () => { cursorDot.style.transform = 'scale(2.5)'; });
+      el.addEventListener('mouseleave', () => { cursorDot.style.transform = 'scale(1)'; });
+    });
 
-                <!-- ===== IBM Cloud Computing ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cloud">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera IBM Cloud Computing.pdf"
-                            title="IBM Cloud Computing Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">IBM</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Cloud Computing</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">IBM · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Cloud computing fundamentals, deployment models, virtualization, and cloud service
-                            architectures.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera IBM Cloud Computing.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera IBM Cloud Computing.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    // ============ NAVBAR ============
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
 
-                <!-- ===== Meta Front-End ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Meta Intro to Front end.pdf"
-                            title="Meta Frontend Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <polyline points="16 18 22 12 16 6" />
-                                    <polyline points="8 6 2 12 8 18" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Meta</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Introduction to Front-End Development</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Fundamentals of front-end development including HTML, CSS, and JavaScript basics.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Meta Intro to Front end.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Meta Intro to Front end.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    // mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
 
-                <!-- ===== Meta JavaScript ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Meta Js.pdf" title="Meta JavaScript Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Meta</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Programming with JavaScript</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Comprehensive JavaScript programming including ES6+ features, DOM manipulation, and async
-                            programming.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Meta Js.pdf" target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Meta Js.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    // ============ CARD MOUSE GLOW ============
+    document.querySelectorAll('.card-modern').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
 
-                <!-- ===== Meta Version Control ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Meta Version Control.pdf"
-                            title="Meta Version Control Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <circle cx="18" cy="18" r="3" />
-                                    <circle cx="6" cy="6" r="3" />
-                                    <path d="M6 21V9a9 9 0 009 9" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Meta</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Version Control</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Meta · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Git and GitHub for version control, collaboration, and project management.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Meta Version Control.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Meta Version Control.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    // ============ FILTER CERTIFICATES ============
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const certItems = document.querySelectorAll('.cert-item');
 
-                <!-- ===== DigiSkills WordPress ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="webdev">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/DigiSkillsDSTP_Word Press.pdf" title="WordPress Certificate"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M4 4h16v16H4z" />
-                                    <path d="M4 9h16M9 4v16" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">WordPress Development</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Complete WordPress development including theme customization, plugin development, and site
-                            management.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/DigiSkillsDSTP_Word Press.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
 
-                <!-- ===== Google Foundations of Cybersecurity ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Foundations of Cybersecurity.pdf"
-                            title="Cybersecurity Foundations"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Foundations of Cybersecurity</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Fundamental cybersecurity concepts, threats, vulnerabilities, and security controls.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Foundations of Cybersecurity.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        const category = this.getAttribute('data-category');
 
-                <!-- ===== Google Play It Safe ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Play It Safe Manage Security Risks.pdf"
-                            title="Security Risks"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <line x1="12" y1="8" x2="12" y2="12" />
-                                    <line x1="12" y1="16" x2="12.01" y2="16" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Play It Safe: Manage Security Risks</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Risk management frameworks, security controls, and incident response procedures.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf"
-                                target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Play It Safe Manage Security Risks.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Google Assets, Threats ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf"
-                            title="Assets Threats"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path
-                                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 01-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 011-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 011.52 0C14.51 3.81 17 5 19 5a1 1 0 011 1z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Assets, Threats & Vulnerabilities</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Asset identification, threat modeling, and vulnerability assessment techniques.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf"
-                                target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Assets, Threats, and Vulnerabilities.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Google Automate Python ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf"
-                            title="Automate Python"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <polyline points="16 18 22 12 16 6" />
-                                    <polyline points="8 6 2 12 8 18" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Automate Cybersecurity with Python</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Python scripting for cybersecurity automation, log analysis, and security tool development.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf"
-                                target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Automate Cybersecurity Tasks with Python.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Google Linux and SQL ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Linux and SQL.pdf" title="Linux and SQL"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <rect x="2" y="3" width="20" height="14" rx="2" />
-                                    <line x1="8" y1="21" x2="16" y2="21" />
-                                    <line x1="12" y1="17" x2="12" y2="21" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Linux and SQL</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Linux command line and SQL for security operations, log analysis, and database security.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Linux and SQL.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Linux and SQL.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Google Networks ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Networls and Network Security.pdf"
-                            title="Networks"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <circle cx="12" cy="12" r="10" />
-                                    <line x1="2" y1="12" x2="22" y2="12" />
-                                    <path
-                                        d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Networks and Network Security</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Network protocols, architecture, and security measures including firewalls and IDS.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Networls and Network Security.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Networls and Network Security.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Google Detection & Response ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="cybersecurity">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/Coursera Google Sound the Alarm Detection and Response.pdf"
-                            title="Detection Response"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60a5fa"
-                                    stroke-width="2">
-                                    <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
-                                    <path d="M13.73 21a2 2 0 01-3.46 0" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Google</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Detection and Response</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Google · via Coursera</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Security monitoring, incident detection, and response procedures for cyber incidents.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf"
-                                target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Coursera Google Sound the Alarm Detection and Response.pdf" download
-                                class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== DigiSkills Graphic Design ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="design">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" title="Graphic Design"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(217,70,239,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e879f9"
-                                    stroke-width="2">
-                                    <path d="M12 19l7-7 3 3-7 7-3-3z" />
-                                    <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" />
-                                    <path d="M2 2l7.586 7.586" />
-                                    <circle cx="11" cy="11" r="2" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Graphic Designing</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Professional graphic design including Adobe Creative Suite, typography, and visual
-                            communication.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/DigiSkillsDSTP_Graphic Desiging.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== DigiSkills Freelancing ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/DigiSkillsDSTP_Freelancing.pdf" title="Freelancing"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                    stroke-width="2">
-                                    <rect x="2" y="7" width="20" height="14" rx="2" />
-                                    <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">DigiSkills</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Freelancing</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">DigiSkills Pakistan</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Freelance business management, client acquisition, and project management.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" target="_blank"
-                                class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/DigiSkillsDSTP_Freelancing.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== Ignite Hackathon ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
-                    <div class="pdf-preview">
-                        <iframe
-                            src="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
-                            title="Ignite Hackathon"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(139,92,246,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
-                                    stroke-width="2">
-                                    <path d="M6 9H4.5a2.5 2.5 0 010-5H6" />
-                                    <path d="M18 9h1.5a2.5 2.5 0 000-5H18" />
-                                    <path d="M4 22h16" />
-                                    <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-                                    <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-                                    <path d="M18 2H6v7a6 6 0 0012 0V2z" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Hackathon</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">Ignite Hackathon Participation</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">Ignite · Aug 2024</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            National hackathon participation showcasing innovation and technical problem-solving.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
-                                target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/Ignite Hackathon Participation Quetta (23 - 25 Aug, 2024) - Abdullah.pdf"
-                                download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== BDC TechWeek Volunteer ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/BDC_TeckWeek_Volunteer.pdf" title="TechWeek Volunteer"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                    stroke-width="2">
-                                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                                    <circle cx="9" cy="7" r="4" />
-                                    <path d="M23 21v-2a4 4 0 00-3-3.87" />
-                                    <path d="M16 3.13a4 4 0 010 7.75" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Leadership</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">TechWeek Volunteer</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Volunteer leadership in organizing and managing technical events and workshops.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/BDC_TeckWeek_Volunteer.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ===== BDC TechWeek Participation ===== -->
-                <div class="card-modern group overflow-hidden flex flex-col cert-item" data-category="other">
-                    <div class="pdf-preview">
-                        <iframe src="certificates/BDC_teckWeek.pdf" title="TechWeek Participation"></iframe>
-                        <div class="pdf-overlay"></div>
-                        <div class="pdf-icon-badge">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                                <polyline points="14 2 14 8 20 8" />
-                            </svg>
-                            PDF
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-start justify-between mb-3">
-                            <div class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                                style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                    stroke-width="2">
-                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                                    <line x1="16" y1="2" x2="16" y2="6" />
-                                    <line x1="8" y1="2" x2="8" y2="6" />
-                                    <line x1="3" y1="10" x2="21" y2="10" />
-                                </svg>
-                            </div>
-                            <span class="tag" style="font-size:0.65rem;">Event</span>
-                        </div>
-                        <h3 class="font-display text-lg mb-1">TechWeek Participation</h3>
-                        <div class="text-xs mb-3" style="color: var(--accent);">BUITEMS Developers Club · 2023</div>
-                        <p class="text-sm flex-grow mb-4" style="color: var(--text-dim);">
-                            Active participation in week-long technical event featuring workshops, competitions, and
-                            networking.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="certificates/BDC_teckWeek.pdf" target="_blank" class="btn-sm-primary">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                                View
-                            </a>
-                            <a href="certificates/BDC_teckWeek.pdf" download class="btn-sm-ghost">
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2.5">
-                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
-                                    <polyline points="7 10 12 15 17 10" />
-                                    <line x1="12" y1="15" x2="12" y2="3" />
-                                </svg>
-                                PDF
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Back to Home -->
-            <div class="text-center mt-16">
-                <a href="index.html" class="btn-ghost">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2.5">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                    Back to Portfolio
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== FOOTER ========== -->
-    <footer class="pt-16 pb-8 relative mt-16" style="z-index: 1; border-top: 1px solid var(--border);">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-10 mb-12">
-                <div class="md:col-span-5">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-9 h-9 rounded-lg flex items-center justify-center"
-                            style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white"
-                                stroke-width="2.5">
-                                <polyline points="16 18 22 12 16 6" />
-                                <polyline points="8 6 2 12 8 18" />
-                            </svg>
-                        </div>
-                        <span class="font-display text-lg">abdullah<span style="color: var(--accent);">.k</span></span>
-                    </div>
-                    <p class="text-sm mb-5 max-w-sm" style="color: var(--text-dim);">
-                        Full Stack Developer & AI Integrator. Building intelligent SaaS platforms and beautiful
-                        interfaces.
-                    </p>
-                    <div class="flex gap-3">
-                        <a href="https://github.com/Abdullah-Khalid-web" target="_blank"
-                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-                            style="background: var(--card); border: 1px solid var(--border);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                stroke-width="2">
-                                <path
-                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank"
-                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-                            style="background: var(--card); border: 1px solid var(--border);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                stroke-width="2">
-                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
-                                <rect x="2" y="9" width="4" height="12" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank"
-                            class="w-9 h-9 rounded-lg flex items-center justify-center transition-all"
-                            style="background: var(--card); border: 1px solid var(--border);">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa"
-                                stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="5" />
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="md:col-span-3">
-                    <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Navigate
-                    </h4>
-                    <ul class="space-y-2">
-                        <li><a href="index.html#home" class="text-sm transition-colors"
-                                style="color: var(--text-dim); text-decoration: none;"
-                                onmouseover="this.style.color='var(--accent)'"
-                                onmouseout="this.style.color='var(--text-dim)'">Home</a></li>
-                        <li><a href="index.html#about" class="text-sm transition-colors"
-                                style="color: var(--text-dim); text-decoration: none;"
-                                onmouseover="this.style.color='var(--accent)'"
-                                onmouseout="this.style.color='var(--text-dim)'">About</a></li>
-                        <li><a href="index.html#skills" class="text-sm transition-colors"
-                                style="color: var(--text-dim); text-decoration: none;"
-                                onmouseover="this.style.color='var(--accent)'"
-                                onmouseout="this.style.color='var(--text-dim)'">Stack</a></li>
-                        <li><a href="index.html#projects" class="text-sm transition-colors"
-                                style="color: var(--text-dim); text-decoration: none;"
-                                onmouseover="this.style.color='var(--accent)'"
-                                onmouseout="this.style.color='var(--text-dim)'">Work</a></li>
-                    </ul>
-                </div>
-                <div class="md:col-span-4">
-                    <h4 class="font-display text-sm uppercase tracking-wider mb-4" style="color: var(--text);">Services
-                    </h4>
-                    <ul class="space-y-2">
-                        <li class="text-sm" style="color: var(--text-dim);">Laravel / Node.js Backend</li>
-                        <li class="text-sm" style="color: var(--text-dim);">Vue.js / React Frontend</li>
-                        <li class="text-sm" style="color: var(--text-dim);">AI & OCR Integration</li>
-                        <li class="text-sm" style="color: var(--text-dim);">SaaS & ERP Architecture</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3"
-                style="border-top: 1px solid var(--border);">
-                <p class="text-xs" style="color: var(--text-dim);">© 2025 Abdullah Khalid. All rights reserved.</p>
-                <p class="text-xs font-mono" style="color: var(--text-dim);">Built with <span
-                        style="color: var(--accent);">&lt;/&gt;</span> + <span style="color: #ec4899;">♥</span></p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ========== SCRIPTS ========== -->
-    <script>
-        // ============ CURSOR GLOW ============
-        const cursorDot = document.getElementById('cursorDot');
-        let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
-        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
-        function animateCursor() {
-            dotX += (mouseX - dotX) * 0.15;
-            dotY += (mouseY - dotY) * 0.15;
-            cursorDot.style.left = dotX - 4 + 'px';
-            cursorDot.style.top = dotY - 4 + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
-
-        document.querySelectorAll('a, button, .card-modern').forEach(el => {
-            el.addEventListener('mouseenter', () => { cursorDot.style.transform = 'scale(2.5)'; });
-            el.addEventListener('mouseleave', () => { cursorDot.style.transform = 'scale(1)'; });
+        certItems.forEach(item => {
+          if (category === 'all' || item.getAttribute('data-category') === category) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
         });
-
-        // ============ NAVBAR ============
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) navbar.classList.add('scrolled');
-            else navbar.classList.remove('scrolled');
-        });
-
-        // mobile menu
-        const menuBtn = document.getElementById('menuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-        // ============ CARD MOUSE GLOW ============
-        document.querySelectorAll('.card-modern').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                const rect = card.getBoundingClientRect();
-                card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-                card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-            });
-        });
-
-        // ============ FILTER CERTIFICATES (BUG FIX) ============
-        // The previous version used AOS + fadeUp animation on already-hidden elements,
-        // which caused the cards to vanish when scrolling because AOS's `once: true`
-        // had already marked them as animated. Now we simply toggle display without
-        // touching any animation library or opacity state.
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const certItems = document.querySelectorAll('.cert-item');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-
-                const category = this.getAttribute('data-category');
-
-                certItems.forEach(item => {
-                    if (category === 'all' || item.getAttribute('data-category') === category) {
-                        item.style.display = 'flex';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+      });
+    });
+  </script>
 </body>
-
 </html>

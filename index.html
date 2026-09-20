@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdullah Khalid — Full Stack & AI Engineer</title>
+  <title>Engr. Abdullah Khalid — Full Stack & AI Engineer</title>
+  
+  <!-- Anti-flash: runs BEFORE CSS so no wrong-theme flash -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') {
+        document.documentElement.classList.remove('light');
+      } else {
+        document.documentElement.classList.add('light');
+      }
+    })();
+  </script>
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Abdullah Khalid — Full Stack & AI Engineer">
+  <meta property="og:title" content="Engr. Abdullah Khalid — Full Stack & AI Engineer">
   <meta property="og:description" content="Laravel · Vue · React · Node.js · AI · SaaS · OCR · Multi-tenant Systems">
   <meta property="og:image" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/img3.png">
   <meta property="og:url" content="https://abdullah-khalid-web.github.io/AbdullahsTechJourney.github.io/">
@@ -22,7 +34,44 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   
   <style>
+    /* =====================================================
+       THEME VARIABLES
+       DEFAULT = LIGHT.  Add .dark to <html> for dark mode.
+    ===================================================== */
+
+    /* ---------- LIGHT THEME (DEFAULT) ---------- */
     :root {
+      --bg: #f7f7fc;
+      --bg-2: #ffffff;
+      --card: #ffffff;
+      --card-2: #f5f3ff;
+      --border: rgba(30,20,70,0.08);
+      --border-hover: rgba(139,92,246,0.4);
+      --text: #1a1533;
+      --text-dim: #6b6890;
+      --accent: #7c3aed;
+      --accent-2: #6366f1;
+      --accent-3: #c026d3;
+      --glow: rgba(139,92,246,0.35);
+      --grid-line: rgba(139,92,246,0.08);
+      --orb-opacity: 0.22;
+      --nav-scrolled: rgba(255,255,255,0.85);
+      --tag-bg: rgba(124,58,237,0.07);
+      --tag-border: rgba(124,58,237,0.18);
+      --tag-text: #6d28d9;
+      --tag-bg-hover: rgba(124,58,237,0.14);
+      --tag-text-hover: #4c1d95;
+      --card-glow: rgba(124,58,237,0.08);
+      --code-bg: #f5f3ff;
+      --code-header: #ede9fe;
+      --shadow-card: 0 20px 40px -20px rgba(124,58,237,0.22);
+      --shadow-btn: 0 15px 30px -10px rgba(124,58,237,0.4);
+      --section-alt: rgba(124,58,237,0.035);
+      --scrollbar-track: #f7f7fc;
+    }
+
+    /* ---------- DARK THEME ---------- */
+    html.dark {
       --bg: #0a0a0f;
       --bg-2: #0f0f18;
       --card: #13131f;
@@ -35,6 +84,21 @@
       --accent-2: #6366f1;
       --accent-3: #d946ef;
       --glow: rgba(139,92,246,0.5);
+      --grid-line: rgba(139,92,246,0.03);
+      --orb-opacity: 0.35;
+      --nav-scrolled: rgba(10,10,15,0.85);
+      --tag-bg: rgba(139,92,246,0.08);
+      --tag-border: rgba(139,92,246,0.15);
+      --tag-text: #c4b5fd;
+      --tag-bg-hover: rgba(139,92,246,0.15);
+      --tag-text-hover: #e9d5ff;
+      --card-glow: rgba(139,92,246,0.06);
+      --code-bg: #0d0d15;
+      --code-header: #13131f;
+      --shadow-card: 0 20px 40px -20px rgba(139,92,246,0.3);
+      --shadow-btn: 0 15px 30px -10px rgba(139,92,246,0.6);
+      --section-alt: rgba(15,15,24,0.5);
+      --scrollbar-track: #0a0a0f;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -46,6 +110,7 @@
       overflow-x: hidden;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      transition: background 0.5s ease, color 0.5s ease;
     }
 
     /* ============ TYPOGRAPHY ============ */
@@ -56,15 +121,18 @@
     .bg-grid {
       position: fixed; inset: 0; z-index: 0; pointer-events: none;
       background-image:
-        linear-gradient(rgba(139,92,246,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(139,92,246,0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+      transition: background-image 0.5s ease;
     }
     .orb {
-      position: fixed; border-radius: 50%; filter: blur(120px); z-index: 0; pointer-events: none; opacity: 0.35;
+      position: fixed; border-radius: 50%; filter: blur(120px); z-index: 0; pointer-events: none;
+      opacity: var(--orb-opacity);
       animation: float 20s ease-in-out infinite;
+      transition: opacity 0.5s ease;
     }
     .orb-1 { width: 500px; height: 500px; background: radial-gradient(circle, #8b5cf6, transparent 70%); top: -200px; left: -100px; }
     .orb-2 { width: 400px; height: 400px; background: radial-gradient(circle, #6366f1, transparent 70%); top: 40%; right: -150px; animation-delay: -7s; }
@@ -82,7 +150,7 @@
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .navbar-custom.scrolled {
-      background: rgba(10,10,15,0.85);
+      background: var(--nav-scrolled);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid var(--border);
@@ -105,18 +173,50 @@
     }
     .nav-link-custom:hover::before { width: 20px; }
 
+    /* ============ THEME TOGGLE ============ */
+    .theme-toggle {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px var(--glow);
+    }
+    .theme-toggle svg {
+      width: 18px; height: 18px;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+      position: absolute;
+    }
+    .theme-toggle .icon-sun { opacity: 1; transform: rotate(0deg) scale(1); }
+    .theme-toggle .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+    html.dark .theme-toggle .icon-sun { opacity: 0; transform: rotate(90deg) scale(0.5); }
+    html.dark .theme-toggle .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
     /* ============ CARDS ============ */
     .card-modern {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 20px;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), background 0.5s ease;
       position: relative;
       overflow: hidden;
     }
     .card-modern::before {
       content: ''; position: absolute; inset: 0;
-      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(139,92,246,0.06), transparent 40%);
+      background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), var(--card-glow), transparent 40%);
       opacity: 0; transition: opacity 0.4s;
       pointer-events: none;
     }
@@ -124,7 +224,7 @@
     .card-modern:hover {
       border-color: var(--border-hover);
       transform: translateY(-4px);
-      box-shadow: 0 20px 40px -20px rgba(139,92,246,0.3);
+      box-shadow: var(--shadow-card);
     }
 
     /* ============ BUTTONS ============ */
@@ -147,12 +247,12 @@
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 15px 30px -10px rgba(139,92,246,0.6);
+      box-shadow: var(--shadow-btn);
       color: white;
     }
     .btn-primary::after {
       content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
       transition: left 0.5s;
     }
     .btn-primary:hover::after { left: 100%; }
@@ -175,7 +275,7 @@
     .btn-ghost:hover {
       border-color: var(--accent);
       color: var(--accent);
-      background: rgba(139,92,246,0.05);
+      background: var(--tag-bg);
       transform: translateY(-2px);
     }
 
@@ -183,23 +283,29 @@
     .tag {
       display: inline-flex; align-items: center;
       padding: 0.4rem 0.85rem;
-      background: rgba(139,92,246,0.08);
-      border: 1px solid rgba(139,92,246,0.15);
-      color: #c4b5fd;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-border);
+      color: var(--tag-text);
       border-radius: 100px;
       font-size: 0.78rem;
       font-weight: 500;
       transition: all 0.25s;
     }
     .tag:hover {
-      background: rgba(139,92,246,0.15);
+      background: var(--tag-bg-hover);
       border-color: var(--accent);
-      color: #e9d5ff;
+      color: var(--tag-text-hover);
       transform: translateY(-1px);
     }
 
     /* ============ GRADIENT TEXT ============ */
     .gradient-text {
+      background: linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #c026d3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    html.dark .gradient-text {
       background: linear-gradient(135deg, #a78bfa 0%, #818cf8 40%, #e879f9 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -233,13 +339,14 @@
     .cursor-dot {
       width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
       position: fixed; pointer-events: none; z-index: 9999;
-      transition: transform 0.1s; mix-blend-mode: difference;
+      transition: transform 0.1s;
     }
+    html.dark .cursor-dot { mix-blend-mode: difference; }
 
     /* ============ SCROLLBAR ============ */
     ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent), var(--accent-2)); border-radius: 10px; border: 2px solid var(--bg); }
+    ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--accent), var(--accent-2)); border-radius: 10px; border: 2px solid var(--scrollbar-track); }
     ::-webkit-scrollbar-thumb:hover { background: var(--accent-3); }
 
     /* ============ ANIMATIONS ============ */
@@ -250,8 +357,8 @@
     }
     .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
     @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(139,92,246,0.4); }
-      50% { box-shadow: 0 0 0 15px rgba(139,92,246,0); }
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+      50% { box-shadow: 0 0 0 15px rgba(34,197,94,0); }
     }
 
     /* ============ HERO PHOTO ============ */
@@ -266,10 +373,13 @@
       width: 420px;
       height: 420px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(139,92,246,0.4), rgba(99,102,241,0.15) 45%, transparent 70%);
+      background: radial-gradient(circle, rgba(124,58,237,0.35), rgba(99,102,241,0.15) 45%, transparent 70%);
       filter: blur(40px);
       z-index: 0;
       animation: pulseGlow 5s ease-in-out infinite;
+    }
+    html.dark .hero-photo-glow {
+      background: radial-gradient(circle, rgba(139,92,246,0.4), rgba(99,102,241,0.15) 45%, transparent 70%);
     }
     @keyframes pulseGlow {
       0%, 100% { transform: scale(1); opacity: 0.7; }
@@ -280,19 +390,21 @@
       width: 380px;
       height: 380px;
       border-radius: 50%;
-      border: 1px dashed rgba(139,92,246,0.25);
+      border: 1px dashed rgba(124,58,237,0.3);
       animation: spinSlow 30s linear infinite;
       z-index: 1;
     }
+    html.dark .hero-photo-ring { border-color: rgba(139,92,246,0.25); }
     .hero-photo-ring-2 {
       position: absolute;
       width: 460px;
       height: 460px;
       border-radius: 50%;
-      border: 1px dashed rgba(217,70,239,0.15);
+      border: 1px dashed rgba(192,38,211,0.2);
       animation: spinSlow 45s linear infinite reverse;
       z-index: 1;
     }
+    html.dark .hero-photo-ring-2 { border-color: rgba(217,70,239,0.15); }
     @keyframes spinSlow {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -304,11 +416,12 @@
       height: 380px;
       object-fit: cover;
       object-position: center top;
-      filter: drop-shadow(0 25px 50px rgba(139,92,246,0.35));
+      filter: drop-shadow(0 25px 50px rgba(124,58,237,0.3));
       -webkit-mask-image: radial-gradient(ellipse 78% 88% at 50% 45%, black 55%, transparent 85%);
       mask-image: radial-gradient(ellipse 78% 88% at 50% 45%, black 55%, transparent 85%);
       animation: floaty 7s ease-in-out infinite;
     }
+    html.dark .hero-photo { filter: drop-shadow(0 25px 50px rgba(139,92,246,0.35)); }
     @media (max-width: 1024px) {
       .hero-photo, .hero-photo-ring, .hero-photo-glow { width: 300px; height: 300px; }
       .hero-photo-ring-2 { width: 360px; height: 360px; }
@@ -322,7 +435,8 @@
     .float-badge {
       position: absolute;
       z-index: 3;
-      background: rgba(19,19,31,0.9);
+      background: var(--card);
+      opacity: 0.95;
       backdrop-filter: blur(12px);
       border: 1px solid var(--border);
       border-radius: 14px;
@@ -330,12 +444,17 @@
       display: flex;
       align-items: center;
       gap: 0.65rem;
+      box-shadow: 0 15px 30px -10px rgba(124,58,237,0.2);
+    }
+    html.dark .float-badge {
+      background: rgba(19,19,31,0.9);
       box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
+      opacity: 1;
     }
 
     /* responsive */
     @media (max-width: 768px) {
-      .orb { opacity: 0.2; }
+      .orb { opacity: 0.18; }
       .cursor-dot { display: none; }
     }
 
@@ -352,7 +471,7 @@
     }
     .competency-item:hover {
       border-color: var(--border-hover);
-      background: rgba(139,92,246,0.03);
+      background: var(--tag-bg);
       transform: translateX(4px);
     }
     .competency-icon {
@@ -362,7 +481,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(139,92,246,0.1);
+      background: var(--tag-bg);
+    }
+
+    /* ============ SECTION ALT BACKGROUND ============ */
+    .section-alt {
+      background: var(--section-alt);
+      transition: background 0.5s ease;
+    }
+
+    /* smooth theme transition */
+    .card-modern, .btn-ghost, .nav-link-custom, .theme-toggle, .competency-item,
+    .float-badge, .section-label, .tag, footer, nav {
+      transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
     }
   </style>
 </head>
@@ -397,19 +528,34 @@
         <a href="#skills" class="nav-link-custom">Stack</a>
         <a href="#projects" class="nav-link-custom">Work</a>
         <a href="#design" class="nav-link-custom">Design</a>
-        <a href="certification.html" class="nav-link-custom ">Certs</a>
+        <a href="certification.html" class="nav-link-custom">Certs</a>
         <a href="#contact" class="nav-link-custom">Contact</a>
       </div>
 
-      <a href="#contact" class="hidden md:inline-flex btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
-        Let's talk
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
+      <div class="flex items-center gap-3">
+        <!-- THEME TOGGLE -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <!-- Sun icon (shown in LIGHT mode) -->
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+          <!-- Moon icon (shown in DARK mode) -->
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
 
-      <!-- mobile menu button -->
-      <button id="menuBtn" class="md:hidden p-2 rounded-lg" style="background: var(--card); border: 1px solid var(--border);">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+        <a href="#contact" class="hidden md:inline-flex btn-primary" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+          Let's talk
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
+        <!-- mobile menu button -->
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg" style="background: var(--card); border: 1px solid var(--border); color: var(--text);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
     </div>
 
     <!-- mobile menu -->
@@ -419,6 +565,7 @@
       <a href="#skills" class="block py-2.5 nav-link-custom">Stack</a>
       <a href="#projects" class="block py-2.5 nav-link-custom">Work</a>
       <a href="#design" class="block py-2.5 nav-link-custom">Design</a>
+      <a href="certification.html" class="block py-2.5 nav-link-custom">Certs</a>
       <a href="#contact" class="block py-2.5 nav-link-custom">Contact</a>
     </div>
   </nav>
@@ -429,9 +576,9 @@
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         <!-- Left: Text -->
         <div class="lg:col-span-7" data-aos="fade-right" data-aos-duration="1000">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style="background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.2);">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style="background: var(--tag-bg); border: 1px solid var(--tag-border);">
             <span class="w-2 h-2 rounded-full pulse-glow" style="background: #22c55e;"></span>
-            <span class="text-xs font-medium" style="color: #c4b5fd;">Available for opportunities</span>
+            <span class="text-xs font-medium" style="color: var(--tag-text);">PEC-Registered Engineer · Available</span>
           </div>
 
           <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] mb-6">
@@ -440,9 +587,9 @@
           </h1>
 
           <p class="text-lg mb-8 max-w-xl" style="color: var(--text-dim);">
-            I'm <span style="color: var(--text); font-weight: 600;">Abdullah Khalid</span> — Full Stack Developer crafting
-            <span style="color: #c4b5fd;">Laravel</span>, <span style="color: #c4b5fd;">Vue</span>, <span style="color: #c4b5fd;">React</span>,
-            <span style="color: #c4b5fd;">Node.js</span> apps and <span style="color: #c4b5fd;">AI-powered SaaS</span> platforms.
+            I'm <span style="color: var(--text); font-weight: 600;">Engr. Abdullah Khalid</span> — Full Stack Developer crafting
+            <span style="color: var(--accent);">Laravel</span>, <span style="color: var(--accent);">Vue</span>, <span style="color: var(--accent);">React</span>,
+            <span style="color: var(--accent);">Node.js</span> apps and <span style="color: var(--accent);">AI-powered SaaS</span> platforms.
           </p>
 
           <div class="flex flex-wrap gap-3 mb-10">
@@ -467,8 +614,8 @@
               <div class="text-xs mt-1" style="color: var(--text-dim);">AI Token Saved</div>
             </div>
             <div>
-              <!-- <div class="font-display text-3xl gradient-text">3.6</div>
-              <div class="text-xs mt-1" style="color: var(--text-dim);">CGPA / 4.0</div> -->
+              <div class="font-display text-3xl gradient-text">PEC</div>
+              <div class="text-xs mt-1" style="color: var(--text-dim);">Registered</div>
             </div>
           </div>
         </div>
@@ -479,13 +626,13 @@
             <div class="hero-photo-glow"></div>
             <div class="hero-photo-ring"></div>
             <div class="hero-photo-ring-2"></div>
-            <img src="img12.png" alt="Abdullah Khalid" class="hero-photo"
+            <img src="img1.png" alt="Abdullah Khalid" class="hero-photo"
                  onerror="this.src='https://ui-avatars.com/api/?name=Abdullah+Khalid&size=500&background=6c63ff&color=fff&bold=true&font-size=0.33'">
 
             <!-- floating badges -->
             <div class="float-badge" style="top: 12%; left: -4%; animation: floaty 5s ease-in-out infinite;">
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(139,92,246,0.15);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
               <div>
                 <div class="text-xs font-bold">Laravel · Vue</div>
@@ -494,8 +641,8 @@
             </div>
 
             <div class="float-badge" style="bottom: 18%; right: -6%; animation: floaty 6s ease-in-out infinite; animation-delay: -2s;">
-              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: rgba(217,70,239,0.15);">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e879f9" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m0 4.4l-4.2 4.2M23 12h-6m-6 0H1m18.4-6.4l-4.2 4.2m0 4.4l4.2 4.2"/></svg>
+              <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m0 4.4l-4.2 4.2M23 12h-6m-6 0H1m18.4-6.4l-4.2 4.2m0 4.4l4.2 4.2"/></svg>
               </div>
               <div>
                 <div class="text-xs font-bold">AI Integration</div>
@@ -510,14 +657,14 @@
     <!-- scroll indicator -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2" style="color: var(--text-dim);">
       <span class="text-xs font-mono">scroll</span>
-      <div class="w-px h-12 relative overflow-hidden" style="background: rgba(255,255,255,0.1);">
+      <div class="w-px h-12 relative overflow-hidden" style="background: var(--border);">
         <div class="absolute top-0 w-full h-4" style="background: var(--accent); animation: scrollDown 2s infinite;"></div>
       </div>
     </div>
   </section>
 
   <!-- ========== TECH MARQUEE ========== -->
-  <section class="py-10 border-y" style="border-color: var(--border); background: rgba(15,15,24,0.5);">
+  <section class="py-10 border-y section-alt" style="border-color: var(--border);">
     <div class="overflow-hidden relative">
       <div class="flex gap-12 animate-marquee" style="width: max-content; animation: marquee 40s linear infinite;">
         <span class="font-display text-2xl whitespace-nowrap" style="color: var(--text-dim);">Laravel</span>
@@ -587,7 +734,7 @@
         <!-- left narrative -->
         <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
           <p class="text-lg leading-relaxed" style="color: var(--text-dim);">
-            I'm a Full Stack Developer based in Quetta, Pakistan, specializing in 
+            I'm a PEC-Registered Software Engineer based in Quetta, Pakistan, specializing in 
             <span style="color: var(--text); font-weight: 500;">PHP/Laravel</span>, 
             <span style="color: var(--text); font-weight: 500;">Node.js/Express</span>, 
             <span style="color: var(--text); font-weight: 500;">Vue.js/React</span>, and 
@@ -600,11 +747,11 @@
             and solved server-side pagination issues on enterprise ERP systems.
           </p>
 
-          <!-- Core Competencies Grid (replaces empty space) -->
+          <!-- Core Competencies Grid -->
           <div class="grid grid-cols-2 gap-3 pt-4">
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">Backend</div>
@@ -613,7 +760,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">Frontend</div>
@@ -622,7 +769,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">Databases</div>
@@ -631,7 +778,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m0 4.4l-4.2 4.2M23 12h-6m-6 0H1m18.4-6.4l-4.2 4.2m0 4.4l4.2 4.2"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v6M5.6 5.6l4.2 4.2m0 4.4l-4.2 4.2M23 12h-6m-6 0H1m18.4-6.4l-4.2 4.2m0 4.4l4.2 4.2"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">AI & OCR</div>
@@ -640,7 +787,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M21 12a9 9 0 11-6.22-8.56"/><path d="M21 3v6h-6"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 12a9 9 0 11-6.22-8.56"/><path d="M21 3v6h-6"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">API Design</div>
@@ -649,7 +796,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">System Design</div>
@@ -658,7 +805,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">Testing</div>
@@ -667,7 +814,7 @@
             </div>
             <div class="competency-item">
               <div class="competency-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
               </div>
               <div>
                 <div class="text-xs font-semibold">DevOps</div>
@@ -688,7 +835,7 @@
               <div class="card-modern p-6">
                 <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
                   <h3 class="font-display text-xl">Full Stack Developer</h3>
-                  <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Current</span>
+                  <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Current</span>
                 </div>
                 <div class="text-sm mb-3" style="color: var(--accent);">Techuick · Full-time · Remote</div>
                 <div class="text-xs mb-3" style="color: var(--text-dim);">Feb 2026 – Present</div>
@@ -754,7 +901,7 @@
   </section>
 
   <!-- ========== SKILLS ========== -->
-  <section id="skills" class="py-24 relative" style="z-index: 1; background: rgba(15,15,24,0.5);">
+  <section id="skills" class="py-24 relative section-alt" style="z-index: 1;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-14" data-aos="fade-up">
         <div class="section-label">02 — Stack</div>
@@ -766,8 +913,8 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Backend -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="0">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">Backend</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Robust APIs and business logic</p>
@@ -780,8 +927,8 @@
 
         <!-- Frontend -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">Frontend</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Interfaces that feel right</p>
@@ -794,8 +941,8 @@
 
         <!-- Databases -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">Databases</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Storage, design & optimization</p>
@@ -808,8 +955,8 @@
 
         <!-- AI & Automation -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="0">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 8v8M8 12h8"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">AI & Automation</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Document intelligence & LLMs</p>
@@ -822,8 +969,8 @@
 
         <!-- Integrations & APIs -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M21 12a9 9 0 11-6.22-8.56"/><path d="M21 3v6h-6"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 12a9 9 0 11-6.22-8.56"/><path d="M21 3v6h-6"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">Integrations</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Connect everything together</p>
@@ -836,8 +983,8 @@
 
         <!-- Testing & Tools -->
         <div class="card-modern p-7" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09a1.65 1.65 0 00-1-1.51 1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09a1.65 1.65 0 001.51-1 1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33h.09a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
           </div>
           <h3 class="font-display text-xl mb-2">Testing & Tools</h3>
           <p class="text-sm mb-5" style="color: var(--text-dim);">Ship & maintain reliably</p>
@@ -849,11 +996,11 @@
         </div>
       </div>
 
-      <!-- System Architecture & Design (full width) -->
+      <!-- System Architecture & Design -->
       <div class="card-modern p-7 mt-6" data-aos="fade-up">
         <div class="flex flex-wrap items-center gap-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
           </div>
           <div class="flex-1 min-w-[200px]">
             <h3 class="font-display text-xl mb-1">System Architecture & Design</h3>
@@ -884,10 +1031,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="0">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Production</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Production</span>
             </div>
             <h3 class="font-display text-xl mb-2">T-Index</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -903,10 +1050,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Production</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Production</span>
             </div>
             <h3 class="font-display text-xl mb-2">DocAssay</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -922,10 +1069,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(251,191,36,0.1); color: #fbbf24;">In Progress</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(251,191,36,0.15); color: #d97706;">In Progress</span>
             </div>
             <h3 class="font-display text-xl mb-2">MetCom</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -941,10 +1088,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="0">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Enterprise</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Enterprise</span>
             </div>
             <h3 class="font-display text-xl mb-2">MSD — Mitsubishi Motors</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -960,10 +1107,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z"/><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M17.5 19H9a7 7 0 116.71-9h1.79a4.5 4.5 0 110 9z"/><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Deployed</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Deployed</span>
             </div>
             <h3 class="font-display text-xl mb-2">DB Backup Manager</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -979,10 +1126,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(139,92,246,0.1); color: #c4b5fd;">FYP</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: var(--tag-bg); color: var(--tag-text);">FYP</span>
             </div>
             <h3 class="font-display text-xl mb-2">ManageHub</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -998,10 +1145,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="0">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(139,92,246,0.1); color: #c4b5fd;">Frontend</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: var(--tag-bg); color: var(--tag-text);">Frontend</span>
             </div>
             <h3 class="font-display text-xl mb-2">Provincial Assembly</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -1017,10 +1164,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="100">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(139,92,246,0.1); color: #c4b5fd;">Data</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: var(--tag-bg); color: var(--tag-text);">Data</span>
             </div>
             <h3 class="font-display text-xl mb-2">Streamlit Dashboard</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -1036,10 +1183,10 @@
         <div class="card-modern group overflow-hidden flex flex-col" data-aos="fade-up" data-aos-delay="200">
           <div class="p-7 pb-5">
             <div class="flex items-start justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(217,70,239,0.2));">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+              <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: var(--tag-bg);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.1); color: #4ade80;">Deployed</span>
+              <span class="text-xs px-2 py-1 rounded-full" style="background: rgba(34,197,94,0.12); color: #16a34a;">Deployed</span>
             </div>
             <h3 class="font-display text-xl mb-2">AR Cosmetics POS</h3>
             <p class="text-sm mb-4" style="color: var(--text-dim);">
@@ -1055,7 +1202,7 @@
   </section>
 
   <!-- ========== DESIGN PORTFOLIO ========== -->
-  <section id="design" class="py-24 relative" style="z-index: 1; background: rgba(15,15,24,0.5);">
+  <section id="design" class="py-24 relative section-alt" style="z-index: 1;">
     <div class="max-w-7xl mx-auto px-6">
       <div class="mb-14" data-aos="fade-up">
         <div class="section-label">04 — Design</div>
@@ -1171,15 +1318,15 @@
         <!-- controls -->
         <div class="flex items-center justify-center gap-4 mt-10">
           <button class="carousel-btn w-11 h-11 rounded-full flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
           </button>
           <div class="flex gap-2">
             <span class="dot active w-2 h-2 rounded-full cursor-pointer transition-all" data-dot="0" style="background: var(--accent);"></span>
-            <span class="dot w-2 h-2 rounded-full cursor-pointer transition-all" data-dot="1" style="background: rgba(255,255,255,0.2);"></span>
-            <span class="dot w-2 h-2 rounded-full cursor-pointer transition-all" data-dot="2" style="background: rgba(255,255,255,0.2);"></span>
+            <span class="dot w-2 h-2 rounded-full cursor-pointer transition-all" data-dot="1" style="background: var(--border);"></span>
+            <span class="dot w-2 h-2 rounded-full cursor-pointer transition-all" data-dot="2" style="background: var(--border);"></span>
           </div>
           <button class="carousel-btn w-11 h-11 rounded-full flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
       </div>
@@ -1198,8 +1345,8 @@
 
       <div class="grid md:grid-cols-3 gap-6">
         <div class="card-modern p-8" data-aos="fade-up" data-aos-delay="0">
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <h3 class="font-display text-lg mb-1">Full Stack Web Development</h3>
           <div class="text-sm mb-4" style="color: var(--text-dim);">Coursera · 2023–2025</div>
@@ -1211,8 +1358,8 @@
         </div>
 
         <div class="card-modern p-8" data-aos="fade-up" data-aos-delay="100">
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3 class="font-display text-lg mb-1">Cybersecurity Fundamentals</h3>
           <div class="text-sm mb-4" style="color: var(--text-dim);">Coursera · 2023–2025</div>
@@ -1224,8 +1371,8 @@
         </div>
 
         <div class="card-modern p-8" data-aos="fade-up" data-aos-delay="200">
-          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: linear-gradient(135deg, rgba(139,92,246,0.2), rgba(99,102,241,0.2));">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style="background: var(--tag-bg);">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
           </div>
           <h3 class="font-display text-lg mb-1">Graphic Design Specialization</h3>
           <div class="text-sm mb-4" style="color: var(--text-dim);">DigiSkills · 2023</div>
@@ -1240,7 +1387,7 @@
   </section>
 
   <!-- ========== CONTACT ========== -->
-  <section id="contact" class="py-24 relative" style="z-index: 1; background: rgba(15,15,24,0.5);">
+  <section id="contact" class="py-24 relative section-alt" style="z-index: 1;">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-14" data-aos="fade-up">
         <div class="section-label justify-center">06 — Contact</div>
@@ -1254,47 +1401,47 @@
 
       <div class="grid md:grid-cols-2 gap-4 mb-8" data-aos="fade-up">
         <a href="mailto:abdullahkhalid8835@gmail.com" class="card-modern p-6 flex items-center gap-4 group" style="text-decoration: none;">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(139,92,246,0.1);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <div class="flex-1 min-w-0">
             <div class="text-xs mb-1" style="color: var(--text-dim);">Email</div>
             <div class="font-medium truncate" style="color: var(--text);">abdullahkhalid8835@gmail.com</div>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
 
         <a href="https://wa.me/+923302808835" target="_blank" class="card-modern p-6 flex items-center gap-4 group" style="text-decoration: none;">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(34,197,94,0.1);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
           </div>
           <div class="flex-1 min-w-0">
             <div class="text-xs mb-1" style="color: var(--text-dim);">WhatsApp</div>
             <div class="font-medium" style="color: var(--text);">+92 330 2808835</div>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
 
         <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank" class="card-modern p-6 flex items-center gap-4 group" style="text-decoration: none;">
           <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(59,130,246,0.1);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </div>
           <div class="flex-1 min-w-0">
             <div class="text-xs mb-1" style="color: var(--text-dim);">LinkedIn</div>
             <div class="font-medium" style="color: var(--text);">Abdullah Khalid</div>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
 
         <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="card-modern p-6 flex items-center gap-4 group" style="text-decoration: none;">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: rgba(139,92,246,0.1);">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--tag-bg);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
           </div>
           <div class="flex-1 min-w-0">
             <div class="text-xs mb-1" style="color: var(--text-dim);">GitHub</div>
             <div class="font-medium" style="color: var(--text);">Abdullah-Khalid-web</div>
           </div>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" class="opacity-0 group-hover:opacity-100 transition-opacity"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
       </div>
 
@@ -1317,20 +1464,20 @@
             <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <span class="font-display text-lg">abdullah<span style="color: var(--accent);">.k</span></span>
+            <span class="font-display text-lg" style="color: var(--text);">Engr.<span style="color: var(--accent);">Abdullah Khalid</span></span>
           </div>
           <p class="text-sm mb-5 max-w-sm" style="color: var(--text-dim);">
-            Full Stack Developer & AI Integrator. Building intelligent SaaS platforms and beautiful interfaces.
+            PEC-Registered Software Engineer & AI Integrator. Building intelligent SaaS platforms and beautiful interfaces.
           </p>
           <div class="flex gap-3">
             <a href="https://github.com/Abdullah-Khalid-web" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             </a>
             <a href="https://www.linkedin.com/in/abdullah-khalid-83356425a" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="https://www.instagram.com/chabdullahkhalid.8835/" target="_blank" class="w-9 h-9 rounded-lg flex items-center justify-center transition-all" style="background: var(--card); border: 1px solid var(--border);">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
           </div>
         </div>
@@ -1354,7 +1501,7 @@
         </div>
       </div>
       <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-3" style="border-top: 1px solid var(--border);">
-        <p class="text-xs" style="color: var(--text-dim);">© 2025 Abdullah Khalid. All rights reserved.</p>
+        <p class="text-xs" style="color: var(--text-dim);">© 2025 Engr. Abdullah Khalid · PEC-Registered. All rights reserved.</p>
         <p class="text-xs font-mono" style="color: var(--text-dim);">Built with <span style="color: var(--accent);">&lt;/&gt;</span> + <span style="color: #ec4899;">♥</span></p>
       </div>
     </div>
@@ -1362,8 +1509,8 @@
 
   <!-- ========== MODAL ========== -->
   <div id="designModal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4" style="background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);">
-    <button id="modalClose" class="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center" style="background: var(--card); border: 1px solid var(--border);">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <button id="modalClose" class="absolute top-6 right-6 w-10 h-10 rounded-full flex items-center justify-center" style="background: var(--card); border: 1px solid var(--border); color: var(--text);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <img id="modalImg" src="" class="max-w-full max-h-[85vh] rounded-2xl" alt="Design">
   </div>
@@ -1371,6 +1518,16 @@
   <!-- ========== SCRIPTS ========== -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
+    // ============ THEME TOGGLE (LIGHT DEFAULT) ============
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      root.classList.toggle('dark');
+      const isDark = root.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+
     // ============ AOS ============
     AOS.init({ once: true, duration: 800, offset: 80, easing: 'ease-out-cubic' });
 
@@ -1425,7 +1582,7 @@
     function showSlide(n) {
       slides.forEach(s => s.classList.remove('active'));
       dots.forEach(d => {
-        d.style.background = 'rgba(255,255,255,0.2)';
+        d.style.background = 'var(--border)';
         d.style.width = '8px';
       });
       slides[n].classList.add('active');
